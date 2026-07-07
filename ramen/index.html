@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>麺道 一灯｜夜更けの路地に、一杯の灯。</title>
+<meta name="description" content="一日二十杯、八席だけの完全予約制 中華蕎麦。十八時間の出汁と四十八時間熟成の自家製麺。東京・台東区（架空のサンプルLP）。">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="麺道 一灯｜夜更けの路地に、一杯の灯。">
+<meta property="og:description" content="一日二十杯、八席だけの完全予約制 中華蕎麦。十八時間の出汁と、四十八時間熟成の麺。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700;800&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0f22; --ink:#ece7da; --accent:#d9a44a; --dim:rgba(236,231,218,.55);
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:auto}
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Sans JP",sans-serif; font-weight:400;
+  line-height:1.9; letter-spacing:.04em;
+  overflow-x:hidden;
+}
+.serif{font-family:"Shippori Mincho B1",serif}
+#gl{position:fixed; inset:0; width:100%; height:100%; z-index:-2; display:block}
+.grain{
+  position:fixed; inset:-50%; width:200%; height:200%; z-index:40; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#progress{
+  position:fixed; top:0; left:0; right:0; height:2px; z-index:60;
+  background:var(--accent); transform:scaleX(0); transform-origin:left center;
+}
+.brand{
+  position:fixed; top:20px; left:20px; z-index:50;
+  font-size:13px; letter-spacing:.5em; color:var(--ink);
+  writing-mode:vertical-rl; padding-top:2px;
+}
+.chapter{
+  position:relative; min-height:100svh; overflow:hidden;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:18svh 7vw; max-width:100%;
+}
+.chapter-inner{position:relative; z-index:2; max-width:920px; margin:0 auto; width:100%}
+.giant{
+  position:absolute; top:50%; right:2vw; transform:translateY(-50%);
+  writing-mode:vertical-rl; font-family:"Shippori Mincho B1",serif; font-weight:800;
+  font-size:clamp(11rem,36vw,26rem); line-height:1; opacity:.08; z-index:1;
+  color:var(--ink); pointer-events:none; user-select:none; white-space:nowrap;
+}
+.ch-label{
+  display:inline-flex; align-items:center; gap:14px;
+  font-size:11px; letter-spacing:.5em; color:var(--accent); font-weight:500;
+}
+.ch-label::after{content:""; width:52px; height:1px; background:var(--accent); opacity:.6}
+.ch-title{
+  margin-top:26px; font-family:"Shippori Mincho B1",serif; font-weight:700;
+  font-size:clamp(2.4rem,9.5vw,5.6rem); line-height:1.28; letter-spacing:.08em;
+  color:var(--ink);
+}
+.line{display:block; overflow:hidden; padding-bottom:.08em; margin-bottom:-.08em}
+.line-inner{display:block; will-change:transform}
+.ch-lead{
+  margin-top:30px; max-width:34em; font-size:clamp(.92rem,2.5vw,1.05rem);
+  color:var(--ink); opacity:.86;
+}
+.kpi{
+  margin-top:52px; display:grid; grid-template-columns:repeat(3,1fr); gap:8px;
+  border-top:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+  padding-top:28px; max-width:640px;
+}
+.kpi div{min-width:0}
+.kpi b{
+  display:block; font-family:"Shippori Mincho B1",serif; font-weight:700;
+  font-size:clamp(1.5rem,5.4vw,2.5rem); line-height:1.2; color:var(--accent);
+  letter-spacing:.02em;
+}
+.kpi small{display:block; margin-top:6px; font-size:10.5px; letter-spacing:.28em; color:var(--dim)}
+.plates{margin-top:56px; display:grid; grid-template-columns:1fr 1fr; gap:14px; max-width:760px}
+.plate{
+  position:relative; overflow:hidden; border-radius:4px;
+  aspect-ratio:4/5; will-change:clip-path;
+  background:color-mix(in srgb, var(--ink) 6%, transparent);
+}
+.plate--wide{grid-column:1/-1; aspect-ratio:16/9}
+.plate-art{
+  position:absolute; inset:-8% 0; display:flex; align-items:center; justify-content:center;
+  will-change:transform;
+}
+.plate-art svg{width:62%; height:auto; max-height:70%; overflow:visible}
+.plate-cap{
+  position:absolute; left:0; right:0; bottom:0; z-index:2;
+  padding:34px 16px 12px;
+  background:linear-gradient(to top, rgba(0,0,0,.55), transparent);
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-size:11px; letter-spacing:.3em; color:#f2ecdf;
+}
+.plate-cap b{font-family:"Shippori Mincho B1",serif; font-size:14px; font-weight:700}
+.poem{
+  margin-top:40px; font-family:"Shippori Mincho B1",serif; font-weight:500;
+  font-size:clamp(1.05rem,3.4vw,1.5rem); line-height:2.35; letter-spacing:.12em;
+}
+.poem-sign{margin-top:34px; font-size:12px; letter-spacing:.4em; color:var(--dim)}
+.poem-sign b{color:var(--ink); font-size:15px; letter-spacing:.3em; font-family:"Shippori Mincho B1",serif; margin-left:14px}
+.gallery{
+  margin-top:56px; display:flex; gap:14px; overflow-x:auto;
+  scroll-snap-type:x mandatory; padding:4px 7vw; margin-left:-7vw; margin-right:-7vw;
+  scrollbar-width:none;
+}
+.gallery::-webkit-scrollbar{display:none}
+.card{
+  flex:0 0 min(74vw,300px); scroll-snap-align:center;
+  border:1px solid color-mix(in srgb, var(--ink) 20%, transparent);
+  border-radius:4px; padding:30px 24px 26px; background:color-mix(in srgb, var(--bg) 55%, transparent);
+  backdrop-filter:blur(2px);
+}
+.card em{font-style:normal; font-family:"Shippori Mincho B1",serif; font-size:30px; color:var(--accent); font-weight:700}
+.card h3{margin-top:14px; font-family:"Shippori Mincho B1",serif; font-size:20px; font-weight:700; letter-spacing:.1em}
+.card p{margin-top:10px; font-size:12.5px; color:var(--dim); line-height:1.9}
+.price{
+  margin-top:52px; max-width:640px; border-top:1px solid color-mix(in srgb, var(--ink) 22%, transparent);
+}
+.price div{
+  display:flex; justify-content:space-between; align-items:baseline; gap:16px;
+  padding:18px 2px; border-bottom:1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+}
+.price span{font-size:14.5px; letter-spacing:.1em}
+.price span small{display:block; font-size:11px; color:var(--dim); letter-spacing:.06em}
+.price b{font-family:"Shippori Mincho B1",serif; font-size:20px; font-weight:700; color:var(--accent); white-space:nowrap}
+.info{
+  margin-top:48px; display:grid; grid-template-columns:1fr 1fr; gap:26px 32px; max-width:640px;
+  font-size:13.5px;
+}
+.info dt{font-size:10.5px; letter-spacing:.4em; color:var(--accent); margin-bottom:8px}
+.info dd{color:var(--ink); opacity:.9}
+.cta-row{margin-top:56px; display:flex; flex-wrap:wrap; gap:14px}
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:56px; padding:0 38px; border-radius:2px; cursor:pointer;
+  font-family:"Noto Sans JP",sans-serif; font-size:14px; font-weight:700; letter-spacing:.22em;
+  border:1px solid var(--accent); transition:opacity .3s; text-decoration:none;
+}
+.btn:hover{opacity:.82}
+.btn--fill{background:var(--accent); color:#14100a}
+.btn--ghost{background:transparent; color:var(--ink)}
+.note{margin-top:26px; font-size:11px; color:var(--dim); letter-spacing:.08em}
+footer{padding:40px 7vw 120px; font-size:11px; color:var(--dim); text-align:center; letter-spacing:.06em}
+.cta-bar{
+  position:fixed; left:0; right:0; bottom:0; z-index:55;
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb, var(--bg) 82%, black);
+  border-top:1px solid color-mix(in srgb, var(--ink) 14%, transparent);
+  transform:translateY(110%); transition:transform .5s cubic-bezier(.22,1,.36,1);
+  display:flex; gap:10px;
+}
+.cta-bar.is-on{transform:translateY(0)}
+.cta-bar .btn{flex:1; min-height:48px; padding:0 10px; font-size:12.5px; letter-spacing:.14em}
+@media (min-width:768px){ .cta-bar{display:none} }
+@media (max-width:600px){
+  .brand{display:none}
+  .info{grid-template-columns:1fr}
+  .plates{grid-template-columns:1fr}
+  .plate{aspect-ratio:16/10}
+  .giant{right:-6vw}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important; transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div id="progress" aria-hidden="true"></div>
+<p class="brand serif" aria-hidden="true">麺道 一灯</p>
+
+<main>
+
+  <!-- 序章 -->
+  <section class="chapter" data-theme="night" id="top">
+    <span class="giant" aria-hidden="true">一灯</span>
+    <div class="chapter-inner hero-inner">
+      <p class="ch-label">序章 ｜ 完全予約制・中華蕎麦</p>
+      <h1 class="ch-title serif">
+        <span class="line"><span class="line-inner">夜更けの路地に、</span></span>
+        <span class="line"><span class="line-inner">一杯の灯。</span></span>
+      </h1>
+      <p class="ch-lead">一日二十杯。八席だけの中華蕎麦。並ばせない。急がせない。最初の香りから最後の一滴まで、その時間はあなたのものだ。</p>
+      <div class="kpi">
+        <div><b>20<small style="display:inline;font-size:12px;letter-spacing:0"> 杯</small></b><small>一日の限定数</small></div>
+        <div><b>8<small style="display:inline;font-size:12px;letter-spacing:0"> 席</small></b><small>カウンターのみ</small></div>
+        <div><b>18<small style="display:inline;font-size:12px;letter-spacing:0"> 時間</small></b><small>出汁の仕込み</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第壱章 出汁 -->
+  <section class="chapter" data-theme="amber" id="dashi">
+    <span class="giant" aria-hidden="true">出汁</span>
+    <div class="chapter-inner">
+      <p class="ch-label">第壱章 ｜ 出汁</p>
+      <h2 class="ch-title serif">
+        <span class="line"><span class="line-inner">澄んで、深い。</span></span>
+      </h2>
+      <p class="ch-lead">丸鶏三羽と蛤二キロ。八十五度を守って十八時間。沸かさない。濁らせない。雑味は、最初から鍋に入れない。</p>
+      <div class="kpi">
+        <div><b>85<small style="display:inline;font-size:12px;letter-spacing:0"> ℃</small></b><small>定温を守る</small></div>
+        <div><b>18<small style="display:inline;font-size:12px;letter-spacing:0"> 時間</small></b><small>火を絶やさない</small></div>
+        <div><b>7<small style="display:inline;font-size:12px;letter-spacing:0"> 種</small></b><small>素材のみ・無化調</small></div>
+      </div>
+      <div class="plates">
+        <figure class="plate">
+          <div class="plate-art">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent)">
+              <path d="M30 90 h140 M40 90 c0 45 25 70 60 70 s60 -25 60 -70" />
+              <path d="M60 70 c-4 -14 6 -18 2 -32 M100 66 c-4 -14 6 -18 2 -32 M140 70 c-4 -14 6 -18 2 -32" opacity=".55" stroke-linecap="round"/>
+              <path d="M55 160 h90" opacity=".4"/>
+            </svg>
+          </div>
+          <figcaption class="plate-cap"><b>羽釜</b><span>85℃ × 18h</span></figcaption>
+        </figure>
+        <figure class="plate">
+          <div class="plate-art">
+            <svg viewBox="0 0 200 200" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent)">
+              <path d="M40 110 a60 52 0 0 1 120 0 c0 8 -12 14 -60 14 s-60 -6 -60 -14z"/>
+              <path d="M100 60 v62 M70 68 c8 18 8 36 4 54 M130 68 c-8 18 -8 36 -4 54" opacity=".55"/>
+            </svg>
+          </div>
+          <figcaption class="plate-cap"><b>蛤</b><span>2kg / 日</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第弐章 麺（明転） -->
+  <section class="chapter" data-theme="wheat" id="men">
+    <span class="giant" aria-hidden="true">麺</span>
+    <div class="chapter-inner">
+      <p class="ch-label">第弐章 ｜ 麺</p>
+      <h2 class="ch-title serif">
+        <span class="line"><span class="line-inner">小麦は、</span></span>
+        <span class="line"><span class="line-inner">香りで選ぶ。</span></span>
+      </h2>
+      <p class="ch-lead">北海道産二品種を七対三で挽き合わせる。加水率三十八パーセント、四十八時間の低温熟成。すすった瞬間、畑の香りがする。</p>
+      <div class="kpi">
+        <div><b>38<small style="display:inline;font-size:12px;letter-spacing:0"> %</small></b><small>加水率</small></div>
+        <div><b>48<small style="display:inline;font-size:12px;letter-spacing:0"> 時間</small></b><small>低温熟成</small></div>
+        <div><b>7:3</b><small>二品種の配合</small></div>
+      </div>
+      <div class="plates">
+        <figure class="plate plate--wide">
+          <div class="plate-art">
+            <svg viewBox="0 0 320 160" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--accent)">
+              <path d="M20 40 c60 30 120 -30 180 0 s80 30 100 20" opacity=".9"/>
+              <path d="M20 70 c60 30 120 -30 180 0 s80 30 100 20" opacity=".65"/>
+              <path d="M20 100 c60 30 120 -30 180 0 s80 30 100 20" opacity=".4"/>
+              <path d="M20 130 c60 30 120 -30 180 0 s80 30 100 20" opacity=".25"/>
+            </svg>
+          </div>
+          <figcaption class="plate-cap"><b>自家製麺</b><span>切刃22番 / 平打ち</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第参章 人 -->
+  <section class="chapter" data-theme="sumi" id="hito">
+    <span class="giant" aria-hidden="true">灯</span>
+    <div class="chapter-inner">
+      <p class="ch-label">第参章 ｜ 店主</p>
+      <h2 class="ch-title serif">
+        <span class="line"><span class="line-inner">星を返した男。</span></span>
+      </h2>
+      <div class="poem">
+        <span class="line"><span class="line-inner">フレンチの厨房で、十五年。</span></span>
+        <span class="line"><span class="line-inner">星をひとつ胸に飾った夜、思い出したのは</span></span>
+        <span class="line"><span class="line-inner">子どもの頃に見た、屋台の湯気だった。</span></span>
+        <span class="line"><span class="line-inner">銀のソースパンを置き、羽釜を選んだ。</span></span>
+        <span class="line"><span class="line-inner">星は返した。灯は、ここにある。</span></span>
+      </div>
+      <p class="poem-sign">店主<b>灯守 誠</b></p>
+      <div class="kpi">
+        <div><b>15<small style="display:inline;font-size:12px;letter-spacing:0"> 年</small></b><small>仏料理の修業</small></div>
+        <div><b>1<small style="display:inline;font-size:12px;letter-spacing:0"> つ</small></b><small>手放した星</small></div>
+        <div><b>3<small style="display:inline;font-size:12px;letter-spacing:0"> 年</small></b><small>一灯、開業から</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 第四章 献立 -->
+  <section class="chapter" data-theme="urushi" id="kondate">
+    <span class="giant" aria-hidden="true">献立</span>
+    <div class="chapter-inner">
+      <p class="ch-label">第四章 ｜ 献立</p>
+      <h2 class="ch-title serif">
+        <span class="line"><span class="line-inner">一杯を、</span></span>
+        <span class="line"><span class="line-inner">コースで食べる。</span></span>
+      </h2>
+      <p class="ch-lead">主役の一杯へ、四品で登っていく。全席同時スタート、九十分の献立。</p>
+      <div class="gallery" data-lenis-prevent>
+        <div class="card">
+          <em>壱</em>
+          <h3>鶏と蛤の茶碗蒸し</h3>
+          <p>出汁の「素」をまず一匙で。今夜の一杯の設計図。</p>
+        </div>
+        <div class="card">
+          <em>弐</em>
+          <h3>中華蕎麦「一灯」</h3>
+          <p>主役。澄んだ醤油、平打ちの自家製麺、炭火の鶏叉焼二枚。</p>
+        </div>
+        <div class="card">
+          <em>参</em>
+          <h3>和えそば 山椒</h3>
+          <p>替え玉は椀を変えて。山椒油と出汁醤油の和えそば。</p>
+        </div>
+        <div class="card">
+          <em>肆</em>
+          <h3>小麦のブラマンジェ</h3>
+          <p>麺と同じ小麦を甘味に。フレンチ十五年の名残り。</p>
+        </div>
+      </div>
+      <div class="price">
+        <div><span>コース「一灯」<small>全四品・九十分</small></span><b>5,500円</b></div>
+        <div><span>中華蕎麦のみ<small>21時以降の空席時のみ</small></span><b>1,650円</b></div>
+        <div><span>飲料ペアリング<small>日本酒・茶 三杯</small></span><b>+2,200円</b></div>
+      </div>
+      <p class="note">※価格は税込。仕入れにより献立の一部が変わります。</p>
+    </div>
+  </section>
+
+  <!-- 終章 案内 -->
+  <section class="chapter" data-theme="night" id="annai">
+    <span class="giant" aria-hidden="true">宵</span>
+    <div class="chapter-inner">
+      <p class="ch-label">終章 ｜ ご案内</p>
+      <h2 class="ch-title serif">
+        <span class="line"><span class="line-inner">今夜の席は、</span></span>
+        <span class="line"><span class="line-inner">二十しかない。</span></span>
+      </h2>
+      <p class="ch-lead">ご予約は三日先まで。二十時の回が最も静かだ。</p>
+      <dl class="info">
+        <div><dt>所在地</dt><dd>東京都台東区一灯町2-8<br>（最寄駅から徒歩6分・路地の奥）</dd></div>
+        <div><dt>営業時間</dt><dd>18:00–23:30（L.O. 22:45）<br>日曜・第三月曜 定休</dd></div>
+        <div><dt>席数</dt><dd>カウンター8席（全席禁煙）</dd></div>
+        <div><dt>ご予約</dt><dd>完全予約制／前日20時まで<br>お一人様から歓迎</dd></div>
+      </dl>
+      <div class="cta-row">
+        <a class="btn btn--fill" href="#annai" data-cta>席を予約する</a>
+        <a class="btn btn--ghost" href="#annai" data-cta>LINEで空席を待つ</a>
+      </div>
+      <p class="note">※このページはポートフォリオ用サンプルのため、予約ボタンは動作しません。</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 麺道 一灯（架空）</p>
+  <p style="margin-top:8px">※このページはWeb制作ポートフォリオ用に作成した架空の飲食店のサンプルLPです。実在の店舗・人物・数値とは関係ありません。</p>
+</footer>
+
+<div class="cta-bar" id="ctaBar">
+  <a class="btn btn--fill" href="#annai" data-cta>席を予約する</a>
+  <a class="btn btn--ghost" href="#annai" data-cta>空席を待つ</a>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var docEl = document.documentElement;
+
+  /* ---------- 章テーマ ---------- */
+  var THEMES = {
+    night: { bg:"#0a0f22", ink:"#ece7da", accent:"#d9a44a", a:"#182452", b:"#2a1c08" },
+    amber: { bg:"#170f06", ink:"#f4e8d2", accent:"#e39b2d", a:"#4a2c0a", b:"#0b0602" },
+    wheat: { bg:"#efe5cf", ink:"#2c2114", accent:"#a4611a", a:"#e0c896", b:"#f8f2e4" },
+    sumi:  { bg:"#111113", ink:"#edeae2", accent:"#d6552f", a:"#232326", b:"#3c120c" },
+    urushi:{ bg:"#1c0d0b", ink:"#f4ead9", accent:"#e0563b", a:"#47140f", b:"#0d0505" }
+  };
+  function hexToRgb(h){
+    return { r:parseInt(h.slice(1,3),16)/255, g:parseInt(h.slice(3,5),16)/255, b:parseInt(h.slice(5,7),16)/255 };
+  }
+  function mixHex(hex, amt){ // 文字のうす色
+    var c = hexToRgb(hex);
+    return "rgba(" + Math.round(c.r*255) + "," + Math.round(c.g*255) + "," + Math.round(c.b*255) + ",.55)";
+  }
+
+  /* ---------- WebGL 流体シェーダー背景 ---------- */
+  var TRAIL_N = 14;
+  var shaderColors = { bg:hexToRgb(THEMES.night.bg), a:hexToRgb(THEMES.night.a), b:hexToRgb(THEMES.night.b) };
+  var glOK = false, glDraw = null;
+  (function initGL(){
+    var canvas = document.getElementById("gl");
+    if (!canvas) return;
+    var gl = canvas.getContext("webgl", { antialias:false, alpha:false, powerPreference:"low-power" });
+    if (!gl) { canvas.style.display = "none"; return; }
+    var VS = "attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}";
+    var FS = [
+      "precision highp float;",
+      "uniform vec2 uRes;uniform float uTime;",
+      "uniform vec3 uBg;uniform vec3 uA;uniform vec3 uB;",
+      "uniform vec3 uTrail[" + TRAIL_N + "];",
+      "float hash(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453123);}",
+      "float noise(vec2 p){vec2 i=floor(p);vec2 f=fract(p);f=f*f*(3.-2.*f);",
+      " return mix(mix(hash(i),hash(i+vec2(1.,0.)),f.x),mix(hash(i+vec2(0.,1.)),hash(i+vec2(1.,1.)),f.x),f.y);}",
+      "float fbm(vec2 p){float v=0.;float a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.03;a*=.5;}return v;}",
+      "void main(){",
+      " vec2 uv=gl_FragCoord.xy/uRes;",
+      " vec2 p=uv;p.x*=uRes.x/uRes.y;",
+      " float t=uTime*.045;",
+      " float trail=0.;",
+      " for(int i=0;i<" + TRAIL_N + ";i++){",
+      "  vec2 d=uv-uTrail[i].xy;d.x*=uRes.x/uRes.y;",
+      "  trail+=uTrail[i].z*exp(-dot(d,d)*95.);",
+      " }",
+      " trail=clamp(trail,0.,1.2);",
+      " float n=fbm(p*2.2+vec2(t,-t*.6)+fbm(p*3.1-t)*.55+trail*.35);",
+      " float m1=smoothstep(.34,.78,n+trail*.45);",
+      " vec3 col=mix(uBg,uA,m1*.8);",
+      " float n2=fbm(p*3.4-t*1.25+trail*.4);",
+      " col=mix(col,uB,smoothstep(.55,.92,n2+trail*.5)*.55);",
+      " col=mix(col,uA,trail*.3);",
+      " float vg=smoothstep(1.25,.35,length(uv-.5)*1.6);",
+      " col*=mix(.74,1.,vg);",
+      " gl_FragColor=vec4(col,1.);",
+      "}"
+    ].join("\n");
+    function compile(type, src){
+      var s = gl.createShader(type);
+      gl.shaderSource(s, src); gl.compileShader(s);
+      if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { return null; }
+      return s;
+    }
+    var vs = compile(gl.VERTEX_SHADER, VS), fs = compile(gl.FRAGMENT_SHADER, FS);
+    if (!vs || !fs) { canvas.style.display = "none"; return; }
+    var prog = gl.createProgram();
+    gl.attachShader(prog, vs); gl.attachShader(prog, fs); gl.linkProgram(prog);
+    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) { canvas.style.display = "none"; return; }
+    gl.useProgram(prog);
+    var buf = gl.createBuffer();
+    gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 3,-1, -1,3]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(prog, "p");
+    gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    var uRes = gl.getUniformLocation(prog, "uRes");
+    var uTime = gl.getUniformLocation(prog, "uTime");
+    var uBg = gl.getUniformLocation(prog, "uBg");
+    var uA = gl.getUniformLocation(prog, "uA");
+    var uB = gl.getUniformLocation(prog, "uB");
+    var uTrail = gl.getUniformLocation(prog, "uTrail");
+    var trail = [];
+    for (var i = 0; i < TRAIL_N; i++) trail.push({ x:.5, y:.5, s:0 });
+    var trailBuf = new Float32Array(TRAIL_N * 3);
+    function onMove(e){
+      trail.pop();
+      trail.unshift({ x:e.clientX/window.innerWidth, y:1 - e.clientY/window.innerHeight, s:1 });
+    }
+    if (!reduced) window.addEventListener("pointermove", onMove, { passive:true });
+    function resize(){
+      var dpr = Math.min(window.devicePixelRatio || 1, 1.5);
+      canvas.width = Math.round(window.innerWidth * dpr);
+      canvas.height = Math.round(window.innerHeight * dpr);
+      gl.viewport(0, 0, canvas.width, canvas.height);
+    }
+    window.addEventListener("resize", resize);
+    resize();
+    var start = performance.now();
+    glDraw = function(){
+      for (var i = 0; i < TRAIL_N; i++) {
+        trail[i].s *= .955;
+        trailBuf[i*3] = trail[i].x; trailBuf[i*3+1] = trail[i].y; trailBuf[i*3+2] = trail[i].s;
+      }
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uTime, (performance.now() - start) / 1000);
+      gl.uniform3f(uBg, shaderColors.bg.r, shaderColors.bg.g, shaderColors.bg.b);
+      gl.uniform3f(uA, shaderColors.a.r, shaderColors.a.g, shaderColors.a.b);
+      gl.uniform3f(uB, shaderColors.b.r, shaderColors.b.g, shaderColors.b.b);
+      gl.uniform3fv(uTrail, trailBuf);
+      gl.drawArrays(gl.TRIANGLES, 0, 3);
+    };
+    glOK = true;
+    if (reduced) { glDraw(); glDraw = null; return; }
+    (function loop(){ if (glDraw) glDraw(); requestAnimationFrame(loop); })();
+  })();
+
+  /* ---------- テーマ適用 ---------- */
+  var currentTheme = "";
+  function applyTheme(name, instant){
+    if (!THEMES[name] || name === currentTheme) return;
+    currentTheme = name;
+    var t = THEMES[name];
+    var dur = (instant || reduced) ? 0 : 1.2;
+    if (window.gsap) {
+      gsap.to(docEl, { duration:dur, ease:"power2.inOut",
+        "--bg":t.bg, "--ink":t.ink, "--accent":t.accent });
+      gsap.to(shaderColors.bg, { duration:dur, ease:"power2.inOut", r:hexToRgb(t.bg).r, g:hexToRgb(t.bg).g, b:hexToRgb(t.bg).b });
+      gsap.to(shaderColors.a,  { duration:dur, ease:"power2.inOut", r:hexToRgb(t.a).r,  g:hexToRgb(t.a).g,  b:hexToRgb(t.a).b });
+      gsap.to(shaderColors.b,  { duration:dur, ease:"power2.inOut", r:hexToRgb(t.b).r,  g:hexToRgb(t.b).g,  b:hexToRgb(t.b).b });
+    } else {
+      docEl.style.setProperty("--bg", t.bg);
+      docEl.style.setProperty("--ink", t.ink);
+      docEl.style.setProperty("--accent", t.accent);
+      shaderColors.bg = hexToRgb(t.bg); shaderColors.a = hexToRgb(t.a); shaderColors.b = hexToRgb(t.b);
+    }
+    docEl.style.setProperty("--dim", mixHex(t.ink));
+    if (reduced && glOK && glDraw) glDraw();
+  }
+  docEl.style.setProperty("--bg", THEMES.night.bg);
+  docEl.style.setProperty("--ink", THEMES.night.ink);
+  docEl.style.setProperty("--accent", THEMES.night.accent);
+  currentTheme = "night";
+
+  /* ---------- Lenis スムーススクロール（失敗時ネイティブ） ---------- */
+  var lenis = null;
+  if (!reduced && typeof Lenis !== "undefined" && window.gsap && window.ScrollTrigger) {
+    try {
+      lenis = new Lenis({ duration:1.25, syncTouch:true });
+      lenis.on("scroll", ScrollTrigger.update);
+      gsap.ticker.add(function(time){ lenis.raf(time * 1000); });
+      gsap.ticker.lagSmoothing(0);
+    } catch (e) { lenis = null; }
+  }
+  function scrollToEl(el){
+    if (!el) return;
+    if (lenis) { lenis.scrollTo(el, { duration:1.4 }); }
+    else { el.scrollIntoView({ behavior: reduced ? "auto" : "smooth" }); }
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("[data-cta]"), function(a){
+    a.addEventListener("click", function(ev){
+      ev.preventDefault();
+      scrollToEl(document.getElementById("annai"));
+    });
+  });
+
+  /* ---------- GSAP 演出 ---------- */
+  if (window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // 章ごとのテーマ切替
+    Array.prototype.forEach.call(document.querySelectorAll("[data-theme]"), function(sec){
+      ScrollTrigger.create({
+        trigger: sec, start: "top 55%", end: "bottom 55%",
+        onEnter: function(){ applyTheme(sec.dataset.theme); },
+        onEnterBack: function(){ applyTheme(sec.dataset.theme); }
+      });
+    });
+
+    if (!reduced) {
+      // 進捗バー
+      var prog = document.getElementById("progress");
+      if (prog) {
+        gsap.to(prog, { scaleX:1, ease:"none",
+          scrollTrigger: { start:0, end:"max", scrub:.3 } });
+      }
+      // 見出し・詩のラインリベール
+      Array.prototype.forEach.call(document.querySelectorAll(".chapter"), function(sec){
+        var lines = sec.querySelectorAll(".line-inner");
+        if (lines.length) {
+          gsap.from(lines, {
+            yPercent:115, duration:1.1, ease:"power4.out", stagger:.14,
+            scrollTrigger: { trigger: sec, start: "top 70%" }
+          });
+        }
+        var kpis = sec.querySelectorAll(".kpi div, .ch-label, .ch-lead, .poem-sign, .price div, .info > div, .cta-row, .note");
+        if (kpis.length) {
+          gsap.from(kpis, {
+            y:28, autoAlpha:0, duration:.9, ease:"power3.out", stagger:.08,
+            scrollTrigger: { trigger: sec, start: "top 62%" }
+          });
+        }
+        var giant = sec.querySelector(".giant");
+        if (giant) {
+          gsap.fromTo(giant, { yPercent:10 }, { yPercent:-10, ease:"none",
+            scrollTrigger: { trigger: sec, start:"top bottom", end:"bottom top", scrub:true } });
+        }
+        var cards = sec.querySelectorAll(".card");
+        if (cards.length) {
+          gsap.from(cards, {
+            x:60, autoAlpha:0, duration:1, ease:"power3.out", stagger:.1,
+            scrollTrigger: { trigger: sec.querySelector(".gallery"), start: "top 78%" }
+          });
+        }
+      });
+      // プレート（写真代替）のシネマティック・リベール＋内側パララックス
+      Array.prototype.forEach.call(document.querySelectorAll(".plate"), function(plate){
+        gsap.fromTo(plate,
+          { clipPath: "inset(12% 8% 12% 8%)" },
+          { clipPath: "inset(0% 0% 0% 0%)", duration:1.3, ease:"power3.inOut",
+            scrollTrigger: { trigger: plate, start: "top 80%" } });
+        var art = plate.querySelector(".plate-art");
+        if (art) {
+          gsap.fromTo(art, { yPercent:-6 }, { yPercent:6, ease:"none",
+            scrollTrigger: { trigger: plate, start:"top bottom", end:"bottom top", scrub:true } });
+        }
+      });
+      // ヒーロー退場（奥に沈む）
+      var hero = document.querySelector(".hero-inner");
+      if (hero) {
+        gsap.to(hero, { scale:.92, autoAlpha:0, ease:"none",
+          scrollTrigger: { trigger:"#top", start:"top top", end:"bottom 35%", scrub:true } });
+      }
+      // モバイル固定CTA（ヒーローを過ぎたら表示）
+      var bar = document.getElementById("ctaBar");
+      if (bar) {
+        ScrollTrigger.create({
+          trigger: "#dashi", start: "top 80%",
+          onEnter: function(){ bar.classList.add("is-on"); },
+          onLeaveBack: function(){ bar.classList.remove("is-on"); }
+        });
+        ScrollTrigger.create({
+          trigger: "#annai", start: "top 60%",
+          onEnter: function(){ bar.classList.remove("is-on"); },
+          onLeaveBack: function(){ bar.classList.add("is-on"); }
+        });
+      }
+      window.addEventListener("load", function(){ ScrollTrigger.refresh(); });
+    }
+  }
+})();
+</script>
+</body>
+</html>
