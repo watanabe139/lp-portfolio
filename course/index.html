@@ -5,88 +5,112 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Excel時短塾｜毎日の残業1時間を、30日でゼロに。事務職のためのオンライン講座</title>
 <meta name="description" content="関数もマクロも「仕事で使う順」だけ学ぶ、事務職のためのExcel時短オンライン講座。1本5分の動画×実務課題、質問し放題・30日間返金保証。まずは無料体験レッスンから。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='%234f46e5'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='%231D4266'/%3E%3C/svg%3E">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        brand: { 50:'#eef2ff', 100:'#e0e7ff', 400:'#818cf8', 500:'#6366f1', 600:'#4f46e5', 700:'#4338ca', 900:'#312e81' },
-        accent: { 400:'#fbbf24', 500:'#f59e0b', 600:'#d97706' }
+        paper: '#F7F7F3',
+        mist: '#EFEFE8',
+        line: '#E0E1D7',
+        ink: { 700:'#47525A', 900:'#1F2B36' },
+        brand: { 100:'#DEE7EF', 300:'#93A9BD', 500:'#3A6B99', 700:'#1D4266', 900:'#14283C' },
+        accent: { 500:'#DD8508', 600:'#C27204' }
       },
-      fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'] }
+      fontFamily: {
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+        mincho: ['"Zen Old Mincho"', 'serif']
+      }
     }
   }
 }
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  .section-title::after { content:""; display:block; width:3rem; height:4px; margin:0.75rem auto 0; background:#4f46e5; border-radius:2px; }
+  body { letter-spacing: .01em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .ph { filter: saturate(.85) sepia(.05) brightness(1.02); }
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .fade.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; transition: none; } }
 </style>
 </head>
-<body class="font-sans text-slate-800 bg-white pb-16 md:pb-0">
+<body class="font-sans text-ink-700 bg-paper pb-16 md:pb-0 leading-[1.9]">
 
 <!-- ▼ ヘッダー -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
-  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-    <div>
-      <p class="font-black text-brand-700 text-lg leading-tight">Excel時短塾</p>
-      <p class="text-xs text-slate-500">完全オンライン｜1本5分の動画×実務課題｜質問し放題</p>
+<header class="sticky top-0 z-40 bg-paper/95 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <div class="flex items-baseline gap-4">
+      <p class="font-mincho font-black text-brand-900 text-xl">Excel時短塾</p>
+      <p class="hidden lg:block text-xs text-ink-700 tracking-wide">完全オンライン｜1本5分の動画×実務課題｜質問し放題</p>
     </div>
-    <a href="#trial" class="hidden md:inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold px-5 py-2.5 rounded-full shadow transition">無料体験を予約する</a>
+    <a href="#trial" class="hidden md:inline-block bg-accent-500 hover:bg-accent-600 text-white text-sm font-bold tracking-wider px-6 py-3 rounded-md transition">無料体験を予約する ↗</a>
   </div>
 </header>
 
 <!-- ▼ ファーストビュー -->
-<section class="bg-gradient-to-b from-brand-50 to-white">
-  <div class="max-w-5xl mx-auto px-4 pt-12 pb-14 md:pt-20 md:pb-20 text-center">
-    <p class="inline-block bg-brand-100 text-brand-700 text-sm font-bold px-4 py-1.5 rounded-full mb-5">事務職・営業事務・経理アシスタントの方へ</p>
-    <h1 class="text-3xl md:text-5xl font-black leading-tight text-brand-900">
-      毎日の残業1時間を、<br class="md:hidden">30日でゼロに。
-    </h1>
-    <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
-      関数もマクロも、全部は学びません。<br>
-      あなたの仕事に出てくる順に<span class="font-bold text-brand-700">「使うものだけ」</span>を、1本5分の動画と実務課題で身につけるExcel時短オンライン講座です。
-    </p>
-    <div class="mt-6 flex flex-wrap justify-center gap-2 text-sm font-bold text-brand-700">
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">受講生1,200名突破</span>
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">受講後アンケート満足度94%</span>
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">30日間返金保証</span>
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-28 md:pb-32 grid md:grid-cols-[6fr_5fr] gap-12 md:gap-16 items-center">
+    <div>
+      <p class="flex items-center gap-4 text-sm font-bold text-brand-700 tracking-[0.2em]">
+        <span class="inline-block w-10 h-px bg-brand-700" aria-hidden="true"></span>事務職・営業事務・経理アシスタントの方へ
+      </p>
+      <h1 class="mt-8 font-mincho font-black text-3xl lg:text-[2.75rem] xl:text-5xl leading-[1.4] text-brand-900">
+        <span class="inline-block">毎日の残業1時間を、</span><span class="inline-block">30日でゼロに。</span>
+      </h1>
+      <p class="mt-8 text-base md:text-lg max-w-[34em]">
+        関数もマクロも、全部は学びません。あなたの仕事に出てくる順に<span class="font-bold text-brand-900">「使うものだけ」</span>を、1本5分の動画と実務課題で身につけるExcel時短オンライン講座です。
+      </p>
+      <ul class="mt-8 space-y-2 text-sm font-bold text-brand-900 md:space-y-0 md:flex md:divide-x md:divide-line">
+        <li class="md:pr-5">完全オンライン</li>
+        <li class="md:px-5">1本5分の動画×実務課題</li>
+        <li class="md:px-5">質問し放題</li>
+      </ul>
+      <div class="mt-10">
+        <a href="#trial" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-base md:text-lg font-bold tracking-wider px-8 md:px-12 py-4 md:py-5 rounded-md transition hover:-translate-y-0.5 whitespace-nowrap" style="box-shadow:0 8px 24px rgba(221,133,8,.22)">無料体験レッスンを予約する ↗</a>
+        <p class="mt-4 text-sm text-ink-700">予約は30秒で完了／体験だけの参加も歓迎／無理な勧誘はありません</p>
+      </div>
     </div>
-    <div class="mt-8">
-      <a href="#trial" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-base md:text-lg font-bold px-8 md:px-10 py-4 rounded-full shadow-lg transition whitespace-nowrap">まずは無料体験レッスンを予約する</a>
-      <p class="mt-3 text-sm text-slate-500">予約は30秒で完了／体験だけの参加も歓迎／無理な勧誘はありません</p>
+    <div class="relative">
+      <img src="https://images.pexels.com/photos/8297058/pexels-photo-8297058.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="明るいオフィスでノートPCの表計算に向かう女性" class="ph rounded-2xl w-full h-80 md:h-[480px] object-cover" width="1200" height="800">
+      <div class="absolute -bottom-6 left-5 md:-left-8 bg-white border border-line rounded-xl px-6 py-4">
+        <p class="font-mincho font-bold text-brand-900">30日間 全額返金保証</p>
+        <p class="text-xs text-ink-700 mt-1">理由を問わず、期間内は全額返金します</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ 受講生のBefore/After -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">30日後、受講生はこう変わりました</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-sm font-bold text-brand-600">営業事務・20代女性</p>
-        <div class="mt-4 space-y-3 text-sm leading-relaxed">
-          <p><span class="inline-block w-16 text-center bg-slate-300 text-slate-700 font-bold rounded px-2 py-0.5 mr-2">Before</span>毎週の売上報告に2時間。数式はSUMだけ</p>
-          <p><span class="inline-block w-16 text-center bg-accent-500 text-white font-bold rounded px-2 py-0.5 mr-2">After</span>ピボット化して<span class="font-bold">毎週12分</span>に。金曜の残業がなくなった</p>
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-6xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">OUTCOME</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">30日後、受講生は<br class="md:hidden">こう変わりました</h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-sm font-bold text-brand-700">営業事務・20代女性</p>
+        <div class="mt-4 space-y-4 text-sm border-t border-line pt-4">
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-ink-700 mb-1">BEFORE</span>毎週の売上報告に2時間。数式はSUMだけ</p>
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-brand-500 mb-1">AFTER</span>ピボット化して<span class="font-bold text-ink-900">毎週12分</span>に。金曜の残業がなくなった</p>
         </div>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-sm font-bold text-brand-600">経理アシスタント・30代男性</p>
-        <div class="mt-4 space-y-3 text-sm leading-relaxed">
-          <p><span class="inline-block w-16 text-center bg-slate-300 text-slate-700 font-bold rounded px-2 py-0.5 mr-2">Before</span>請求書チェックは2画面を目視で照合</p>
-          <p><span class="inline-block w-16 text-center bg-accent-500 text-white font-bold rounded px-2 py-0.5 mr-2">After</span>XLOOKUPで自動照合。<span class="font-bold">ミスの差し戻しがゼロ</span>に</p>
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-sm font-bold text-brand-700">経理アシスタント・30代男性</p>
+        <div class="mt-4 space-y-4 text-sm border-t border-line pt-4">
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-ink-700 mb-1">BEFORE</span>請求書チェックは2画面を目視で照合</p>
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-brand-500 mb-1">AFTER</span>XLOOKUPで自動照合。<span class="font-bold text-ink-900">ミスの差し戻しがゼロ</span>に</p>
         </div>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-sm font-bold text-brand-600">総務・50代女性</p>
-        <div class="mt-4 space-y-3 text-sm leading-relaxed">
-          <p><span class="inline-block w-16 text-center bg-slate-300 text-slate-700 font-bold rounded px-2 py-0.5 mr-2">Before</span>「マクロは若い人のもの」と諦めていた</p>
-          <p><span class="inline-block w-16 text-center bg-accent-500 text-white font-bold rounded px-2 py-0.5 mr-2">After</span>録画マクロで月次の定型作業を<span class="font-bold">ボタン1つ</span>に</p>
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-sm font-bold text-brand-700">総務・50代女性</p>
+        <div class="mt-4 space-y-4 text-sm border-t border-line pt-4">
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-ink-700 mb-1">BEFORE</span>「マクロは若い人のもの」と諦めていた</p>
+          <p><span class="block text-xs font-bold tracking-[0.2em] text-brand-500 mb-1">AFTER</span>録画マクロで月次の定型作業を<span class="font-bold text-ink-900">ボタン1つ</span>に</p>
         </div>
       </div>
     </div>
@@ -94,89 +118,138 @@ tailwind.config = {
 </section>
 
 <!-- ▼ 悩み共感 -->
-<section class="py-14 md:py-20 bg-slate-50">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">毎日の仕事に、こんな「手作業」残っていませんか？</h2>
-    <ul class="mt-10 space-y-4">
-      <li class="flex items-start gap-3 bg-white rounded-xl p-4 md:p-5 shadow-sm">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">同じ形の表を、<span class="font-bold">毎週コピペで作り直している</span></p>
+<section class="py-20 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">PROBLEM</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">毎日の仕事に、こんな<br class="md:hidden">「手作業」残っていませんか。</h2>
+    <ul class="mt-12 divide-y divide-line border-y border-line">
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>同じ形の表を、<span class="font-bold text-ink-900">毎週コピペで作り直している</span></p>
       </li>
-      <li class="flex items-start gap-3 bg-white rounded-xl p-4 md:p-5 shadow-sm">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">2つのリストを<span class="font-bold">目で見比べて</span>、行を1本ずつ照合している</p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>2つのリストを<span class="font-bold text-ink-900">目で見比べて</span>、行を1本ずつ照合している</p>
       </li>
-      <li class="flex items-start gap-3 bg-white rounded-xl p-4 md:p-5 shadow-sm">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">ネットで関数を調べても、<span class="font-bold">自分の表のどこに当てはめればいいか分からない</span></p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>ネットで関数を調べても、<span class="font-bold text-ink-900">自分の表のどこに当てはめればいいか分からない</span></p>
       </li>
-      <li class="flex items-start gap-3 bg-white rounded-xl p-4 md:p-5 shadow-sm">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">本や動画で勉強を始めても、<span class="font-bold">3日目から開かなくなる</span></p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>本や動画で勉強を始めても、<span class="font-bold text-ink-900">3日目から開かなくなる</span></p>
       </li>
     </ul>
-    <p class="mt-8 text-center text-lg leading-relaxed">
-      その残業、能力の問題ではありません。<br><span class="font-bold text-brand-700">「実務で使う順」に学んでいないだけ</span>です。
+    <p class="mt-10 text-lg">
+      その残業、能力の問題ではありません。<span class="font-bold text-brand-900">「実務で使う順」に学んでいないだけ</span>です。
     </p>
   </div>
 </section>
 
-<!-- ▼ 選ばれる理由 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">Excel時短塾が「続く・効く」3つの理由</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">01</p>
-        <h3 class="mt-3 font-black text-lg text-brand-900">「仕事で使う順」カリキュラム</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">アルファベット順でも機能一覧順でもなく、事務の現場に出てくる頻度順に学ぶから、<span class="font-bold text-slate-800">翌日の業務がすぐ速くなります。</span>網羅はしません。使わないものはやりません。</p>
+<!-- ▼ 選ばれる理由（写真ジグザグ） -->
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="fade">
+      <p class="text-xs font-bold tracking-[0.3em] text-brand-500">REASON</p>
+      <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">Excel時短塾が<br class="md:hidden">「続く・効く」理由</h2>
+    </div>
+
+    <div class="mt-16 md:mt-20 space-y-20 md:space-y-28">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative">
+          <img src="https://images.pexels.com/photos/34639577/pexels-photo-34639577.jpeg?auto=compress&cs=tinysrgb&w=900" alt="ノートPCの表計算画面のクローズアップ" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div>
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">01</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">「仕事で使う順」カリキュラム</h3>
+          <p class="mt-6 max-w-[32em]">アルファベット順でも機能一覧順でもなく、事務の現場に出てくる頻度順に学ぶから、<span class="font-bold text-ink-900">翌日の業務がすぐ速くなります。</span>網羅はしません。使わないものはやりません。</p>
+        </div>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">02</p>
-        <h3 class="mt-3 font-black text-lg text-brand-900">1本5分の動画×自分の業務で課題</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">動画は昼休みに1本見られる長さ。課題は教材のサンプルではなく<span class="font-bold text-slate-800">「自分の仕事の表」に適用する形式</span>だから、学んだ瞬間から成果が出ます。</p>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative md:order-2">
+          <img src="https://images.pexels.com/photos/7777128/pexels-photo-7777128.jpeg?auto=compress&cs=tinysrgb&w=900" alt="ノートPCの横でメモを取りながら学ぶ受講生" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div class="md:order-1">
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">02</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">1本5分の動画×自分の業務で課題</h3>
+          <p class="mt-6 max-w-[32em]">動画は昼休みに1本見られる長さ。課題は教材のサンプルではなく<span class="font-bold text-ink-900">「自分の仕事の表」に適用する形式</span>だから、学んだ瞬間から成果が出ます。</p>
+        </div>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">03</p>
-        <h3 class="mt-3 font-black text-lg text-brand-900">質問し放題＋週1回の添削</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">「自分の表でうまくいかない」を放置しないから、<span class="font-bold text-slate-800">挫折しません。</span>チャットでの質問は回数無制限。作ったファイルには講師が毎週コメントを返します。</p>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative">
+          <img src="https://images.pexels.com/photos/6779570/pexels-photo-6779570.jpeg?auto=compress&cs=tinysrgb&w=900" alt="画面を見ながらデータについて相談する2人" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div>
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">03</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">質問し放題＋週1回の添削</h3>
+          <p class="mt-6 max-w-[32em]">「自分の表でうまくいかない」を放置しないから、<span class="font-bold text-ink-900">挫折しません。</span>チャットでの質問は回数無制限。作ったファイルには講師が毎週コメントを返します。</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ▼ 全幅写真帯 -->
+<section class="relative">
+  <img src="https://images.pexels.com/photos/4623105/pexels-photo-4623105.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+  <div class="absolute inset-0 bg-brand-900/70" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto px-5 py-24 md:py-32 text-center text-white fade">
+    <p class="font-mincho font-bold text-3xl md:text-4xl leading-relaxed tracking-wide">学びは、翌日の定時で<br class="md:hidden">回収する。</p>
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-sm">
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">1,200名</p><p class="mt-3 text-brand-100">受講生数（累計）</p></div>
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">94%</p><p class="mt-3 text-brand-100">受講後アンケート満足度</p></div>
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">30日間</p><p class="mt-3 text-brand-100">理由を問わない全額返金保証</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ▼ カリキュラム -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">30日間のカリキュラム</h2>
-    <p class="mt-6 text-center text-slate-600">1日15分（動画1〜2本＋ミニ課題）を想定したペース配分です。</p>
-    <div class="mt-10 space-y-4">
-      <div class="flex gap-4 bg-slate-50 rounded-xl p-5">
-        <span class="shrink-0 w-14 h-14 rounded-xl bg-brand-600 text-white font-black flex flex-col items-center justify-center leading-none"><span class="text-[10px] font-bold">WEEK</span><span class="text-xl mt-0.5">1</span></span>
+<section class="py-20 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">CURRICULUM</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">30日間のカリキュラム</h2>
+    <p class="mt-6 max-w-[34em]">1日15分（動画1〜2本＋ミニ課題）を想定したペース配分です。</p>
+    <div class="mt-12 divide-y divide-line border-y border-line">
+      <div class="flex gap-6 md:gap-10 py-8 items-start">
+        <div class="shrink-0 w-16 text-center">
+          <p class="text-[10px] font-bold tracking-[0.25em] text-brand-500">WEEK</p>
+          <p class="font-mincho font-black text-4xl text-brand-900 leading-none mt-1">1</p>
+        </div>
         <div>
-          <h3 class="font-black text-brand-900">「手が止まらない」入力・整形術</h3>
-          <p class="mt-1 text-sm text-slate-600 leading-relaxed">ショートカット20選／オートフィル／テーブル化／貼り付けの使い分け。<span class="font-bold">最初の1週間で体感速度を変えます。</span></p>
+          <h3 class="font-mincho font-bold text-xl text-brand-900">「手が止まらない」入力・整形術</h3>
+          <p class="mt-2 text-sm">ショートカット20選／オートフィル／テーブル化／貼り付けの使い分け。<span class="font-bold text-ink-900">最初の1週間で体感速度を変えます。</span></p>
         </div>
       </div>
-      <div class="flex gap-4 bg-slate-50 rounded-xl p-5">
-        <span class="shrink-0 w-14 h-14 rounded-xl bg-brand-600 text-white font-black flex flex-col items-center justify-center leading-none"><span class="text-[10px] font-bold">WEEK</span><span class="text-xl mt-0.5">2</span></span>
+      <div class="flex gap-6 md:gap-10 py-8 items-start">
+        <div class="shrink-0 w-16 text-center">
+          <p class="text-[10px] font-bold tracking-[0.25em] text-brand-500">WEEK</p>
+          <p class="font-mincho font-black text-4xl text-brand-900 leading-none mt-1">2</p>
+        </div>
         <div>
-          <h3 class="font-black text-brand-900">事務で使う関数トップ10だけ</h3>
-          <p class="mt-1 text-sm text-slate-600 leading-relaxed">XLOOKUP／IF／SUMIFS／COUNTIFS／TEXTほか。「リストの照合」「集計表への転記」を関数に置き換えます。</p>
+          <h3 class="font-mincho font-bold text-xl text-brand-900">事務で使う関数トップ10だけ</h3>
+          <p class="mt-2 text-sm">XLOOKUP／IF／SUMIFS／COUNTIFS／TEXTほか。「リストの照合」「集計表への転記」を関数に置き換えます。</p>
         </div>
       </div>
-      <div class="flex gap-4 bg-slate-50 rounded-xl p-5">
-        <span class="shrink-0 w-14 h-14 rounded-xl bg-brand-600 text-white font-black flex flex-col items-center justify-center leading-none"><span class="text-[10px] font-bold">WEEK</span><span class="text-xl mt-0.5">3</span></span>
+      <div class="flex gap-6 md:gap-10 py-8 items-start">
+        <div class="shrink-0 w-16 text-center">
+          <p class="text-[10px] font-bold tracking-[0.25em] text-brand-500">WEEK</p>
+          <p class="font-mincho font-black text-4xl text-brand-900 leading-none mt-1">3</p>
+        </div>
         <div>
-          <h3 class="font-black text-brand-900">集計と報告書はピボットで自動に</h3>
-          <p class="mt-1 text-sm text-slate-600 leading-relaxed">ピボットテーブル／グラフ／条件付き書式。毎週・毎月の報告資料を「データを貼れば完成する」形に作り替えます。</p>
+          <h3 class="font-mincho font-bold text-xl text-brand-900">集計と報告書はピボットで自動に</h3>
+          <p class="mt-2 text-sm">ピボットテーブル／グラフ／条件付き書式。毎週・毎月の報告資料を「データを貼れば完成する」形に作り替えます。</p>
         </div>
       </div>
-      <div class="flex gap-4 bg-slate-50 rounded-xl p-5">
-        <span class="shrink-0 w-14 h-14 rounded-xl bg-brand-600 text-white font-black flex flex-col items-center justify-center leading-none"><span class="text-[10px] font-bold">WEEK</span><span class="text-xl mt-0.5">4</span></span>
+      <div class="flex gap-6 md:gap-10 py-8 items-start">
+        <div class="shrink-0 w-16 text-center">
+          <p class="text-[10px] font-bold tracking-[0.25em] text-brand-500">WEEK</p>
+          <p class="font-mincho font-black text-4xl text-brand-900 leading-none mt-1">4</p>
+        </div>
         <div>
-          <h3 class="font-black text-brand-900">定型作業をボタン1つに（マクロ入門）</h3>
-          <p class="mt-1 text-sm text-slate-600 leading-relaxed">コードは書きません。「操作の録画」から始めるマクロで、月次の定型作業を自動化して卒業です。</p>
+          <h3 class="font-mincho font-bold text-xl text-brand-900">定型作業をボタン1つに（マクロ入門）</h3>
+          <p class="mt-2 text-sm">コードは書きません。「操作の録画」から始めるマクロで、月次の定型作業を自動化して卒業です。</p>
         </div>
       </div>
     </div>
@@ -184,18 +257,22 @@ tailwind.config = {
 </section>
 
 <!-- ▼ 講師紹介 -->
-<section class="py-14 md:py-20 bg-slate-50">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">講師紹介</h2>
-    <div class="mt-10 bg-white rounded-2xl p-6 md:p-8 shadow-sm md:flex gap-8 items-start">
-      <div class="shrink-0 w-24 h-24 rounded-full bg-brand-100 text-brand-600 flex items-center justify-center font-black text-3xl mx-auto md:mx-0">佐</div>
-      <div class="mt-5 md:mt-0">
-        <p class="font-black text-lg text-brand-900 text-center md:text-left">佐藤 まなみ<span class="ml-3 text-sm font-bold text-slate-500">Excel時短塾 主任講師</span></p>
-        <p class="mt-4 text-sm leading-relaxed text-slate-600">
-          メーカー営業事務として12年勤務。自部署の残業を月40時間から8時間に減らした業務改善の経験をもとに、社内研修講師を経て本講座を立ち上げ。<span class="font-bold text-slate-800">「現場で明日使えること」以外は教えない</span>のが信条です。MOS Excel エキスパート／VBAエキスパート保有。
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-5xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">MENTOR</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">講師紹介</h2>
+    <div class="mt-12 md:grid md:grid-cols-[2fr_3fr] md:gap-14 items-center">
+      <div class="relative h-72 md:h-[420px]">
+        <img src="https://images.pexels.com/photos/8837201/pexels-photo-8837201.jpeg?auto=compress&cs=tinysrgb&w=900" alt="講師 佐藤まなみ" class="ph rounded-2xl w-full h-full object-cover" width="900" height="600" loading="lazy">
+      </div>
+      <div class="mt-8 md:mt-0">
+        <p class="font-mincho font-bold text-2xl text-brand-900">佐藤 まなみ</p>
+        <p class="text-sm mt-1 tracking-wide">Excel時短塾 主任講師／MOS Excel エキスパート・VBAエキスパート</p>
+        <p class="mt-8 border-t border-line pt-8">
+          メーカー営業事務として12年勤務。自部署の残業を月40時間から8時間に減らした業務改善の経験をもとに、社内研修講師を経て本講座を立ち上げ。<span class="font-bold text-ink-900">「現場で明日使えること」以外は教えない</span>のが信条です。
         </p>
-        <p class="mt-4 text-sm leading-relaxed text-slate-600 bg-brand-50 rounded-xl p-4">
-          「Excelが得意な人は、実は暗記量ではなく<span class="font-bold">『どこを自動にできるか』に気づく目</span>が違うだけです。その目の付けどころから、一緒に練習しましょう。」
+        <p class="mt-6 pl-5 border-l-2 border-brand-300 text-sm leading-relaxed">
+          「Excelが得意な人は、実は暗記量ではなく<span class="font-bold text-ink-900">『どこを自動にできるか』に気づく目</span>が違うだけです。その目の付けどころから、一緒に練習しましょう。」
         </p>
       </div>
     </div>
@@ -203,65 +280,67 @@ tailwind.config = {
 </section>
 
 <!-- ▼ 受講生の声 -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">「残業が減った」受講生の声</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest font-bold">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">在庫表と発注書の照合が手作業で、月末は必ず残業でした。Week2のXLOOKUPをその週のうちに自分の表に入れたら、<span class="font-bold">月末の照合が15分で終わるように。</span>課題が「自分の業務ファイル」なのが良かったです。</p>
-        <p class="mt-4 text-xs font-bold text-slate-500">卸売業・営業事務／N.K.さん（20代女性）</p>
+<section class="py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">VOICE</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">「残業が減った」<br class="md:hidden">受講生の声</h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-brand-500 text-sm tracking-widest">★★★★★</p>
+        <p class="mt-4 text-sm border-t border-line pt-4">在庫表と発注書の照合が手作業で、月末は必ず残業でした。Week2のXLOOKUPをその週のうちに自分の表に入れたら、<span class="font-bold text-ink-900">月末の照合が15分で終わるように。</span>課題が「自分の業務ファイル」なのが良かったです。</p>
+        <p class="mt-4 text-xs font-bold">卸売業・営業事務／N.K.さん（20代女性）</p>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest font-bold">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">独学の本は3冊とも途中で挫折。ここは動画が5分で、<span class="font-bold">昼休みに1本だけ</span>と決めたら最後まで続きました。質問チャットの返事が具体的で、「あなたの表ならこのセルに」と教えてくれます。</p>
-        <p class="mt-4 text-xs font-bold text-slate-500">建設業・総務／T.M.さん（40代男性）</p>
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-brand-500 text-sm tracking-widest">★★★★★</p>
+        <p class="mt-4 text-sm border-t border-line pt-4">独学の本は3冊とも途中で挫折。ここは動画が5分で、<span class="font-bold text-ink-900">昼休みに1本だけ</span>と決めたら最後まで続きました。質問チャットの返事が具体的で、「あなたの表ならこのセルに」と教えてくれます。</p>
+        <p class="mt-4 text-xs font-bold">建設業・総務／T.M.さん（40代男性）</p>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest font-bold">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">50代でマクロは無理だと思っていましたが、「録画から始める」方式なら私にもできました。月初の請求書発行が<span class="font-bold">ボタン1つになり、部署で頼られる側に。</span>受講して人生が少し変わりました。</p>
-        <p class="mt-4 text-xs font-bold text-slate-500">医療法人・経理／Y.S.さん（50代女性）</p>
+      <div class="bg-mist rounded-xl p-7">
+        <p class="text-brand-500 text-sm tracking-widest">★★★★★</p>
+        <p class="mt-4 text-sm border-t border-line pt-4">50代でマクロは無理だと思っていましたが、「録画から始める」方式なら私にもできました。月初の請求書発行が<span class="font-bold text-ink-900">ボタン1つになり、部署で頼られる側に。</span>受講して人生が少し変わりました。</p>
+        <p class="mt-4 text-xs font-bold">医療法人・経理／Y.S.さん（50代女性）</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ 料金・比較 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">料金</h2>
-    <div class="mt-10 bg-white rounded-2xl shadow-sm overflow-hidden">
-      <div class="bg-brand-700 text-white text-center py-3 text-sm font-bold">買い切り・追加料金なし・今期は7月末申込分まで</div>
-      <div class="p-6 md:p-8 text-center">
-        <p class="text-slate-500 text-sm">通常価格 <span class="line-through">49,800円</span></p>
-        <p class="mt-1 text-4xl md:text-5xl font-black text-brand-900">29,800<span class="text-lg font-bold">円（税込）</span></p>
-        <p class="mt-2 text-sm font-bold text-accent-600">7月開講期 限定20名の特別価格</p>
-        <ul class="mt-6 text-sm text-left max-w-md mx-auto space-y-2 leading-relaxed">
-          <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span>動画教材 全42本（買い切り・視聴期限なし）</li>
-          <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span>実務課題30本＋講師の週1添削（30日間）</li>
-          <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span>チャット質問 回数無制限（30日間）</li>
-          <li class="flex gap-2"><span class="text-brand-500 font-bold">✓</span>修了後も使える「時短チートシート」PDF</li>
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">PRICE</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">料金</h2>
+    <div class="mt-12 border border-line rounded-xl overflow-hidden">
+      <div class="bg-brand-900 text-white text-center py-3 text-sm font-bold tracking-wider">買い切り・追加料金なし・今期は7月末申込分まで</div>
+      <div class="p-7 md:p-10">
+        <p class="text-sm">通常価格 <span class="line-through">49,800円</span></p>
+        <p class="mt-1 font-mincho font-black text-5xl md:text-6xl text-brand-900">29,800<span class="text-lg font-bold font-sans">円（税込）</span></p>
+        <p class="mt-3 text-sm font-bold text-brand-700">7月開講期 限定20名の特別価格</p>
+        <ul class="mt-8 text-sm space-y-3 border-t border-line pt-6">
+          <li class="flex gap-3"><span class="text-brand-500 font-bold" aria-hidden="true">─</span>動画教材 全42本（買い切り・視聴期限なし）</li>
+          <li class="flex gap-3"><span class="text-brand-500 font-bold" aria-hidden="true">─</span>実務課題30本＋講師の週1添削（30日間）</li>
+          <li class="flex gap-3"><span class="text-brand-500 font-bold" aria-hidden="true">─</span>チャット質問 回数無制限（30日間）</li>
+          <li class="flex gap-3"><span class="text-brand-500 font-bold" aria-hidden="true">─</span>修了後も使える「時短チートシート」PDF</li>
         </ul>
-        <div class="mt-6 bg-brand-50 rounded-xl p-4 text-sm leading-relaxed">
-          <span class="font-black text-brand-700">30日間 全額返金保証。</span>課題に取り組んでも「仕事が速くならない」と感じたら、期間内は理由を問わず全額返金します。
-        </div>
+        <p class="mt-8 border-t border-line pt-6 text-sm leading-relaxed">
+          <span class="font-mincho font-bold text-brand-900">30日間 全額返金保証。</span>課題に取り組んでも「仕事が速くならない」と感じたら、期間内は理由を問わず全額返金します。
+        </p>
       </div>
     </div>
-    <div class="mt-8 overflow-x-auto">
-      <table class="w-full text-sm bg-white rounded-2xl shadow-sm overflow-hidden">
+    <div class="mt-10 overflow-x-auto">
+      <table class="w-full text-sm border-t border-line">
         <thead>
-          <tr class="bg-slate-100 text-slate-600">
-            <th class="py-3 px-3 text-left font-bold">比較</th>
-            <th class="py-3 px-3 font-black text-brand-700">Excel時短塾</th>
-            <th class="py-3 px-3 font-bold">月額制スクール</th>
-            <th class="py-3 px-3 font-bold">独学（本・動画）</th>
+          <tr class="text-ink-700">
+            <th class="py-4 px-3 text-left font-normal">比較</th>
+            <th class="py-4 px-3 font-mincho font-bold text-brand-900">Excel時短塾</th>
+            <th class="py-4 px-3 font-normal">月額制スクール</th>
+            <th class="py-4 px-3 font-normal">独学（本・動画）</th>
           </tr>
         </thead>
-        <tbody class="text-center divide-y divide-slate-100">
-          <tr><td class="py-3 px-3 text-left font-bold text-slate-600">費用</td><td class="py-3 px-3 font-bold text-brand-700">29,800円で完結</td><td class="py-3 px-3">月1〜2万円が継続</td><td class="py-3 px-3">数千円</td></tr>
-          <tr><td class="py-3 px-3 text-left font-bold text-slate-600">教材の範囲</td><td class="py-3 px-3 font-bold text-brand-700">実務で使う順だけ</td><td class="py-3 px-3">網羅型で広い</td><td class="py-3 px-3">自分で取捨選択</td></tr>
-          <tr><td class="py-3 px-3 text-left font-bold text-slate-600">自分の業務への適用</td><td class="py-3 px-3 font-bold text-brand-700">課題＋添削で伴走</td><td class="py-3 px-3">質問は可能</td><td class="py-3 px-3">すべて自力</td></tr>
-          <tr><td class="py-3 px-3 text-left font-bold text-slate-600">挫折しにくさ</td><td class="py-3 px-3 font-bold text-brand-700">30日設計＋週1添削</td><td class="py-3 px-3">自分のペース次第</td><td class="py-3 px-3">続かないのが最多</td></tr>
+        <tbody class="text-center divide-y divide-line border-t border-line">
+          <tr><td class="py-4 px-3 text-left font-bold text-ink-900">費用</td><td class="py-4 px-3 font-bold text-brand-700">29,800円で完結</td><td class="py-4 px-3">月1〜2万円が継続</td><td class="py-4 px-3">数千円</td></tr>
+          <tr><td class="py-4 px-3 text-left font-bold text-ink-900">教材の範囲</td><td class="py-4 px-3 font-bold text-brand-700">実務で使う順だけ</td><td class="py-4 px-3">網羅型で広い</td><td class="py-4 px-3">自分で取捨選択</td></tr>
+          <tr><td class="py-4 px-3 text-left font-bold text-ink-900">自分の業務への適用</td><td class="py-4 px-3 font-bold text-brand-700">課題＋添削で伴走</td><td class="py-4 px-3">質問は可能</td><td class="py-4 px-3">すべて自力</td></tr>
+          <tr><td class="py-4 px-3 text-left font-bold text-ink-900">挫折しにくさ</td><td class="py-4 px-3 font-bold text-brand-700">30日設計＋週1添削</td><td class="py-4 px-3">自分のペース次第</td><td class="py-4 px-3">続かないのが最多</td></tr>
         </tbody>
       </table>
     </div>
@@ -269,53 +348,61 @@ tailwind.config = {
 </section>
 
 <!-- ▼ FAQ -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">よくある質問</h2>
-    <div class="mt-10 space-y-4">
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">SUMくらいしか使えない初心者ですが、ついていけますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl leading-none">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">はい、大丈夫です。受講生の約6割が「関数はSUMだけ」の状態から始めています。Week1は関数を使わない時短術から入るので、初日から成果を実感できます。</p>
+<section class="py-20 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">FAQ</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">よくある質問</h2>
+    <div class="mt-12 divide-y divide-line border-y border-line">
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">SUMくらいしか使えない初心者ですが、ついていけますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">はい、大丈夫です。受講生の約6割が「関数はSUMだけ」の状態から始めています。Week1は関数を使わない時短術から入るので、初日から成果を実感できます。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">30日で終わらなかった場合はどうなりますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl leading-none">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">動画教材は買い切りで視聴期限がないため、ご自身のペースで続けられます。質問・添削サポートのみ30日間ですが、+30日の延長オプション（5,000円）もご用意しています。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">30日で終わらなかった場合はどうなりますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">動画教材は買い切りで視聴期限がないため、ご自身のペースで続けられます。質問・添削サポートのみ30日間ですが、+30日の延長オプション（5,000円）もご用意しています。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">MacのExcelや、会社の古いバージョンでも受講できますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl leading-none">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">はい。教材はMicrosoft 365を基準に、Excel 2019以降とMac版の操作差分を都度補足しています。XLOOKUPが使えない環境向けにVLOOKUP版の解説も用意しています。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">MacのExcelや、会社の古いバージョンでも受講できますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">はい。教材はMicrosoft 365を基準に、Excel 2019以降とMac版の操作差分を都度補足しています。XLOOKUPが使えない環境向けにVLOOKUP版の解説も用意しています。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">返金保証の条件を教えてください。<span class="text-brand-500 group-open:rotate-45 transition text-xl leading-none">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">受講開始から30日以内にフォームからご連絡いただければ、理由を問わず全額返金します。課題の提出状況などの条件はありません。安心してお試しください。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">返金保証の条件を教えてください。<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">受講開始から30日以内にフォームからご連絡いただければ、理由を問わず全額返金します。課題の提出状況などの条件はありません。安心してお試しください。</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ▼ CTA -->
-<section id="trial" class="py-16 md:py-24 bg-brand-700 text-center text-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl md:text-4xl font-black leading-tight">その1時間の残業、<br class="md:hidden">来月もやりますか？</h2>
-    <p class="mt-4 text-brand-100 leading-relaxed">無料体験レッスン（40分）では、Week1の時短術を実際に体験しながら、<br class="hidden md:inline">あなたの業務のどこが自動化できるかを講師が一緒に診断します。</p>
-    <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
-      <a href="#" class="bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition">無料体験レッスンを予約する</a>
-      <a href="#" class="bg-white text-brand-700 text-lg font-bold px-10 py-4 rounded-full shadow-lg transition hover:bg-brand-50">資料をダウンロードする</a>
+<section id="trial" class="py-20 md:py-32 bg-brand-900 text-white">
+  <div class="max-w-3xl mx-auto px-5 text-center fade">
+    <h2 class="font-mincho text-3xl md:text-4xl font-bold leading-relaxed tracking-wide">その1時間の残業、<br>来月もやりますか。</h2>
+    <p class="mt-6 text-brand-100">無料体験レッスン（40分）では、Week1の時短術を実際に体験しながら、<br class="hidden md:block">あなたの業務のどこが自動化できるかを講師が一緒に診断します。</p>
+    <div class="mt-12 flex flex-col md:flex-row justify-center gap-4">
+      <a href="#" class="bg-accent-500 hover:bg-accent-600 text-white text-base md:text-lg font-bold tracking-wider px-8 md:px-12 py-4 md:py-5 rounded-md transition hover:-translate-y-0.5 whitespace-nowrap">無料体験レッスンを予約する ↗</a>
+      <a href="#" class="border border-white/60 hover:bg-white/10 text-white text-lg font-bold tracking-wider px-12 py-5 rounded-md transition">資料をダウンロードする</a>
     </div>
-    <p class="mt-4 text-sm text-brand-100">予約は30秒で完了／体験だけの参加も歓迎／無理な勧誘はありません</p>
+    <p class="mt-6 text-sm text-brand-100">予約は30秒で完了／体験だけの参加も歓迎／無理な勧誘はありません</p>
   </div>
 </section>
 
-<footer class="bg-brand-900 text-brand-100 text-center text-xs py-6 px-4">
-  <p>© Excel時短塾</p>
-  <p class="mt-2 opacity-70">※このページはWeb制作ポートフォリオ用に作成した架空のオンライン講座のサンプルLPです。実在のサービスとは関係ありません。</p>
+<footer class="bg-brand-900 border-t border-white/10 text-brand-100 text-center text-xs py-8 px-5">
+  <p class="font-mincho">© Excel時短塾</p>
+  <p class="mt-3 opacity-70 leading-relaxed">※このページはWeb制作ポートフォリオ用に作成した架空のオンライン講座のサンプルLPです。実在のサービスとは関係ありません。写真はPexelsのフリー素材です。</p>
 </footer>
 
 <!-- ▼ モバイル固定CTA -->
-<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200 p-3 flex gap-2">
-  <a href="#trial" class="flex-1 bg-accent-500 text-white font-bold text-center py-3 rounded-full">無料体験を予約</a>
-  <a href="#trial" class="flex-1 bg-brand-600 text-white font-bold text-center py-3 rounded-full">資料を見る</a>
+<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-paper/95 backdrop-blur border-t border-line p-3 flex gap-2">
+  <a href="#trial" class="flex-1 bg-accent-500 text-white font-bold text-center py-3.5 rounded-md">無料体験を予約</a>
+  <a href="#trial" class="flex-1 bg-brand-700 text-white font-bold text-center py-3.5 rounded-md">資料を見る</a>
 </div>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
