@@ -5,154 +5,220 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>あおぞら歯科クリニック｜痛みに配慮した治療・平日20時まで・土日診療</title>
 <meta name="description" content="歯医者が苦手な方のための歯科医院。表面麻酔と電動注射器で痛みに配慮、初回に治療計画をすべて提示。青空駅徒歩3分・平日20時まで・土日も診療。24時間WEB予約受付中。">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='%230284c7'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='6.5' fill='%231E5B54'/%3E%3C/svg%3E">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Zen+Old+Mincho:wght@700;900&display=swap" rel="stylesheet">
 <script>
 tailwind.config = {
   theme: {
     extend: {
       colors: {
-        brand: { 50:'#eff9fb', 100:'#d8f0f5', 400:'#38a8c4', 500:'#1f8fae', 600:'#177590', 700:'#155e74', 900:'#123f4d' },
-        accent: { 400:'#f0a13c', 500:'#e8892b', 600:'#d97316' }
+        cream: '#FAF7F0',
+        sand: '#F2ECE2',
+        line: '#E5DDCC',
+        ink: { 700:'#4A5553', 900:'#22322F' },
+        brand: { 100:'#DEEAE5', 300:'#9EC4BB', 500:'#3E8A7E', 700:'#1E5B54', 900:'#12403B' },
+        accent: { 500:'#D9702F', 600:'#C25E20' }
       },
-      fontFamily: { sans: ['"Noto Sans JP"', 'sans-serif'] }
+      fontFamily: {
+        sans: ['"Noto Sans JP"', 'sans-serif'],
+        mincho: ['"Zen Old Mincho"', 'serif']
+      }
     }
   }
 }
 </script>
 <style>
   html { scroll-behavior: smooth; }
-  .section-title::after { content:""; display:block; width:3rem; height:4px; margin:0.75rem auto 0; background:#1f8fae; border-radius:2px; }
+  body { letter-spacing: .01em; }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  .ph { filter: saturate(.85) sepia(.06) brightness(1.02); }
+  .fade { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+  .fade.visible { opacity: 1; transform: none; }
+  @media (prefers-reduced-motion: reduce) { .fade { opacity: 1; transform: none; transition: none; } }
 </style>
 </head>
-<body class="font-sans text-slate-800 bg-white pb-16 md:pb-0">
+<body class="font-sans text-ink-700 bg-cream pb-16 md:pb-0 leading-[1.9]">
 
 <!-- ▼ ヘッダー -->
-<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-slate-100">
-  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
-    <div>
-      <p class="font-black text-brand-700 text-lg leading-tight">あおぞら歯科クリニック</p>
-      <p class="text-xs text-slate-500">青空駅 徒歩3分｜平日20時まで｜土日診療</p>
+<header class="sticky top-0 z-40 bg-cream/95 backdrop-blur border-b border-line">
+  <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+    <div class="flex items-baseline gap-4">
+      <p class="font-mincho font-black text-brand-900 text-xl">あおぞら歯科クリニック</p>
+      <p class="hidden lg:block text-xs text-ink-700 tracking-wide">青空駅 徒歩3分｜平日20時まで｜土日診療</p>
     </div>
-    <a href="#reserve" class="hidden md:inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold px-5 py-2.5 rounded-full shadow transition">24時間WEB予約</a>
+    <div class="flex items-center gap-5">
+      <p class="hidden md:block text-sm text-brand-900 tracking-wide">TEL <span class="font-mincho font-bold text-base">00-0000-0000</span></p>
+      <a href="#reserve" class="hidden md:inline-block bg-accent-500 hover:bg-accent-600 text-white text-sm font-bold tracking-wider px-6 py-3 rounded-md transition">24時間WEB予約 ↗</a>
+    </div>
   </div>
 </header>
 
 <!-- ▼ ファーストビュー -->
-<section class="bg-gradient-to-b from-brand-50 to-white">
-  <div class="max-w-5xl mx-auto px-4 pt-12 pb-14 md:pt-20 md:pb-20 text-center">
-    <p class="inline-block bg-brand-100 text-brand-700 text-sm font-bold px-4 py-1.5 rounded-full mb-5">歯医者が苦手な方のための歯科医院</p>
-    <h1 class="text-3xl md:text-5xl font-black leading-tight text-brand-900">
-      「歯医者はこわい」を、<br class="md:hidden">終わりにする。
-    </h1>
-    <p class="mt-5 text-base md:text-lg text-slate-600 leading-relaxed">
-      表面麻酔と電動注射器で痛みに配慮した治療。<br>
-      初回に治療計画をすべてお見せするので、<span class="font-bold text-brand-700">あと何回・いくらかかるか</span>が最初から分かります。
-    </p>
-    <div class="mt-6 flex flex-wrap justify-center gap-2 text-sm font-bold text-brand-700">
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">青空駅 徒歩3分</span>
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">平日20時まで診療</span>
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">土日も診療</span>
-      <span class="bg-white border border-brand-100 rounded-full px-4 py-1.5 shadow-sm">キッズスペースあり</span>
+<section class="relative overflow-hidden">
+  <div class="max-w-6xl mx-auto px-5 pt-16 pb-20 md:pt-28 md:pb-32 grid md:grid-cols-[6fr_5fr] gap-12 md:gap-16 items-center">
+    <div>
+      <p class="flex items-center gap-4 text-sm font-bold text-brand-700 tracking-[0.2em]">
+        <span class="inline-block w-10 h-px bg-brand-700" aria-hidden="true"></span>歯医者が苦手な方のための歯科医院
+      </p>
+      <h1 class="mt-8 font-mincho font-black text-4xl lg:text-5xl xl:text-6xl leading-[1.3] text-brand-900">
+        <span class="inline-block">「歯医者はこわい」</span><span class="inline-block">を、終わりにする。</span>
+      </h1>
+      <p class="mt-8 text-base md:text-lg max-w-[34em]">
+        表面麻酔と電動注射器で痛みに配慮した治療。初回に治療計画をすべてお見せするので、<span class="font-bold text-brand-900">あと何回・いくらかかるか</span>が最初から分かります。
+      </p>
+      <ul class="mt-8 space-y-2 text-sm font-bold text-brand-900 md:space-y-0 md:flex md:divide-x md:divide-line">
+        <li class="md:pr-5">青空駅 徒歩3分</li>
+        <li class="md:px-5">平日20時まで診療</li>
+        <li class="md:px-5">土日も診療</li>
+      </ul>
+      <div class="mt-10">
+        <a href="#reserve" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold tracking-wider px-12 py-5 rounded-md transition hover:-translate-y-0.5" style="box-shadow:0 8px 24px rgba(217,112,47,.22)">24時間WEB予約はこちら ↗</a>
+        <p class="mt-4 text-sm text-ink-700">予約は30秒で完了します／無理な治療のおすすめはしません</p>
+      </div>
     </div>
-    <div class="mt-8">
-      <a href="#reserve" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition">24時間WEB予約はこちら</a>
-      <p class="mt-3 text-sm text-slate-500">予約は30秒で完了します／無理な治療のおすすめはしません</p>
+    <div class="relative">
+      <img src="https://images.pexels.com/photos/4269368/pexels-photo-4269368.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="歯科医の説明を落ち着いて聞く患者" class="ph rounded-2xl w-full h-80 md:h-[480px] object-cover" width="1200" height="1800">
+      <div class="absolute -bottom-6 left-5 md:-left-8 bg-white border border-line rounded-xl px-6 py-4">
+        <p class="font-mincho font-bold text-brand-900">治療計画を初回に提示</p>
+        <p class="text-xs text-ink-700 mt-1">回数・期間・費用を書面でお渡しします</p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ 悩み共感 -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">こんなお悩みありませんか？</h2>
-    <ul class="mt-10 space-y-4">
-      <li class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 md:p-5">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">歯医者の<span class="font-bold">音とにおいが苦手</span>で、痛みがあるのに予約を先延ばしにしてしまう</p>
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">PROBLEM</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">こんなお悩み、<br class="md:hidden">ありませんか。</h2>
+    <ul class="mt-12 divide-y divide-line border-y border-line">
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>歯医者の<span class="font-bold text-ink-900">音とにおいが苦手</span>で、痛みがあるのに予約を先延ばしにしてしまう</p>
       </li>
-      <li class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 md:p-5">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">治療のたびに「次で最後です」と言われ、<span class="font-bold">結局あと何回通えばいいのか分からない</span></p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>治療のたびに「次で最後です」と言われ、<span class="font-bold text-ink-900">結局あと何回通えばいいのか分からない</span></p>
       </li>
-      <li class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 md:p-5">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">仕事が終わる頃には、<span class="font-bold">どこの歯医者も閉まっている</span></p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>仕事が終わる頃には、<span class="font-bold text-ink-900">どこの歯医者も閉まっている</span></p>
       </li>
-      <li class="flex items-start gap-3 bg-slate-50 rounded-xl p-4 md:p-5">
-        <span class="mt-0.5 shrink-0 w-6 h-6 rounded-full bg-brand-500 text-white text-sm font-bold flex items-center justify-center">✓</span>
-        <p class="leading-relaxed">子どもを連れて行きたいが、<span class="font-bold">待合室で騒がないか心配</span>で足が遠のく</p>
+      <li class="flex items-start gap-4 py-6">
+        <span class="mt-1 shrink-0 text-brand-500 font-bold" aria-hidden="true">─</span>
+        <p>子どもを連れて行きたいが、<span class="font-bold text-ink-900">待合室で騒がないか心配</span>で足が遠のく</p>
       </li>
     </ul>
-    <p class="mt-8 text-center text-lg leading-relaxed">
-      その「通いづらさ」、<span class="font-bold text-brand-700">クリニック側の工夫</span>で解決できます。
+    <p class="mt-10 text-lg">
+      その「通いづらさ」は、<span class="font-bold text-brand-900">クリニック側の工夫</span>で解決できます。
     </p>
   </div>
 </section>
 
-<!-- ▼ 選ばれる理由 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">あおぞら歯科が選ばれる3つの理由</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">01</p>
-        <h3 class="mt-3 font-bold text-lg text-brand-900">痛みに配慮した治療</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">表面麻酔でチクッとする感覚を抑えてから、注入速度を機械制御する電動注射器で麻酔を行うから、<span class="font-bold text-slate-800">「麻酔がいちばん痛かった」をなくせます。</span></p>
+<!-- ▼ 選ばれる理由（写真ジグザグ） -->
+<section class="py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-5">
+    <div class="fade">
+      <p class="text-xs font-bold tracking-[0.3em] text-brand-500">REASON</p>
+      <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">あおぞら歯科が<br class="md:hidden">選ばれる理由</h2>
+    </div>
+
+    <div class="mt-16 md:mt-20 space-y-20 md:space-y-28">
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative">
+          <img src="https://images.pexels.com/photos/4270379/pexels-photo-4270379.jpeg?auto=compress&cs=tinysrgb&w=900" alt="患者に寄り添いながら治療を行う歯科医と助手" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div>
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">01</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">痛みに配慮した治療</h3>
+          <p class="mt-6 max-w-[32em]">表面麻酔でチクッとする感覚を抑えてから、注入速度を機械制御する電動注射器で麻酔を行います。<span class="font-bold text-ink-900">「麻酔がいちばん痛かった」をなくす</span>ための手順です。</p>
+        </div>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">02</p>
-        <h3 class="mt-3 font-bold text-lg text-brand-900">治療計画を初回にすべて提示</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">初回検査後に、通院回数・期間・費用の見通しを書面でお渡しするから、<span class="font-bold text-slate-800">「あと何回通うのか」の不安なく通えます。</span></p>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative md:order-2">
+          <img src="https://images.pexels.com/photos/7800669/pexels-photo-7800669.jpeg?auto=compress&cs=tinysrgb&w=900" alt="レントゲンを見せながら治療計画を説明する歯科医" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div class="md:order-1">
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">02</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">治療計画を初回にすべて提示</h3>
+          <p class="mt-6 max-w-[32em]">初回検査後に、通院回数・期間・費用の見通しを書面でお渡しします。<span class="font-bold text-ink-900">「あと何回通うのか」の不安なく</span>通えます。</p>
+        </div>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <p class="text-brand-500 font-black text-4xl">03</p>
-        <h3 class="mt-3 font-bold text-lg text-brand-900">平日20時まで・土日も診療</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">青空駅から徒歩3分、平日は20時まで・土日も17時まで診療しているから、<span class="font-bold text-slate-800">仕事帰りや週末の予定に合わせて通えます。</span></p>
+
+      <div class="grid md:grid-cols-2 gap-10 md:gap-16 items-center fade">
+        <div class="relative">
+          <img src="https://images.pexels.com/photos/7422520/pexels-photo-7422520.jpeg?auto=compress&cs=tinysrgb&w=900" alt="明るく清潔な診療室" class="ph rounded-2xl w-full h-64 md:h-96 object-cover" width="900" height="600" loading="lazy">
+        </div>
+        <div>
+          <p class="font-mincho font-black text-6xl md:text-7xl text-brand-100 leading-none select-none" aria-hidden="true">03</p>
+          <h3 class="mt-4 font-mincho font-bold text-2xl md:text-3xl text-brand-900">平日20時まで・土日も診療</h3>
+          <p class="mt-6 max-w-[32em]">青空駅から徒歩3分、平日は20時まで・土日も17時まで診療。<span class="font-bold text-ink-900">仕事帰りや週末の予定に合わせて</span>通えます。キッズスペースもあります。</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ▼ 全幅写真帯 -->
+<section class="relative">
+  <img src="https://images.pexels.com/photos/4269948/pexels-photo-4269948.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="" class="absolute inset-0 w-full h-full object-cover" loading="lazy">
+  <div class="absolute inset-0 bg-brand-900/70" aria-hidden="true"></div>
+  <div class="relative max-w-4xl mx-auto px-5 py-24 md:py-32 text-center text-white fade">
+    <p class="font-mincho font-bold text-3xl md:text-4xl leading-relaxed tracking-wide">「気づいたら終わっていた」を、<br class="md:hidden">ふつうに。</p>
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 text-sm">
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">2段階</p><p class="mt-3 text-brand-100">表面麻酔＋電動注射器の麻酔手順</p></div>
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">毎日</p><p class="mt-3 text-brand-100">急な痛みのための当日枠を確保</p></div>
+      <div><p class="font-mincho font-black text-4xl md:text-5xl">書面</p><p class="mt-3 text-brand-100">回数・期間・費用の計画をお渡し</p></div>
+    </div>
+  </div>
+</section>
+
 <!-- ▼ 診療内容 -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">診療内容</h2>
-    <div class="mt-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-      <div class="border border-slate-200 rounded-xl p-5 text-center">
-        <h3 class="font-bold text-brand-700">一般歯科</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">むし歯・歯周病の治療。できるだけ削らない・抜かない方針です。</p>
+<section class="py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">MENU</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">診療内容</h2>
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="bg-sand rounded-xl p-7 transition hover:-translate-y-1">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">一般歯科</h3>
+        <p class="mt-3 text-sm border-t border-line pt-3">むし歯・歯周病の治療。できるだけ削らない・抜かない方針です。</p>
       </div>
-      <div class="border border-slate-200 rounded-xl p-5 text-center">
-        <h3 class="font-bold text-brand-700">小児歯科</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">キッズスペース完備。治療を嫌がるお子さまは練習から始めます。</p>
+      <div class="bg-sand rounded-xl p-7 transition hover:-translate-y-1">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">小児歯科</h3>
+        <p class="mt-3 text-sm border-t border-line pt-3">キッズスペース完備。治療を嫌がるお子さまは練習から始めます。</p>
       </div>
-      <div class="border border-slate-200 rounded-xl p-5 text-center">
-        <h3 class="font-bold text-brand-700">定期検診・クリーニング</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">3か月ごとの検診で、治療より軽い「予防」で通う歯医者に。</p>
+      <div class="bg-sand rounded-xl p-7 transition hover:-translate-y-1">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">定期検診・クリーニング</h3>
+        <p class="mt-3 text-sm border-t border-line pt-3">3か月ごとの検診で、治療より軽い「予防」で通う歯医者に。</p>
       </div>
-      <div class="border border-slate-200 rounded-xl p-5 text-center">
-        <h3 class="font-bold text-brand-700">ホワイトニング</h3>
-        <p class="mt-2 text-xs text-slate-500 leading-relaxed">自宅で行うホームホワイトニング。自然な白さを目指します。</p>
+      <div class="bg-sand rounded-xl p-7 transition hover:-translate-y-1">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">ホワイトニング</h3>
+        <p class="mt-3 text-sm border-t border-line pt-3">自宅で行うホームホワイトニング。自然な白さを目指します。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ 院長紹介 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">院長紹介</h2>
-    <div class="mt-10 bg-white rounded-2xl p-6 md:p-8 shadow-sm md:flex gap-8 items-start">
-      <div class="shrink-0 w-28 h-28 mx-auto md:mx-0 rounded-full bg-gradient-to-br from-brand-100 to-brand-400 flex items-center justify-center text-white font-black text-2xl">院長</div>
-      <div class="mt-5 md:mt-0">
-        <p class="font-bold text-lg text-brand-900">院長　青井 空太郎<span class="ml-2 text-sm font-normal text-slate-500">（日本歯科大学卒／臨床経験15年）</span></p>
-        <p class="mt-4 text-sm leading-relaxed text-slate-600">
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-5xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">DOCTOR</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">院長紹介</h2>
+    <div class="mt-12 md:grid md:grid-cols-[2fr_3fr] md:gap-14 items-center">
+      <div class="relative h-72 md:h-[420px]">
+        <img src="https://images.pexels.com/photos/5355723/pexels-photo-5355723.jpeg?auto=compress&cs=tinysrgb&w=900" alt="歯の模型を使って笑顔で説明する院長" class="ph rounded-2xl w-full h-full object-cover object-[30%_50%]" width="900" height="600" loading="lazy">
+      </div>
+      <div class="mt-8 md:mt-0">
+        <p class="font-mincho font-bold text-2xl text-brand-900">青井 空子</p>
+        <p class="text-sm mt-1 tracking-wide">院長／日本歯科大学卒・臨床経験15年</p>
+        <p class="mt-8 border-t border-line pt-8">
           私自身、子どもの頃は歯医者が大の苦手でした。あの音、あのにおい、そして「いつ終わるのか分からない」不安。だからこのクリニックでは、痛みへの配慮と「見通しをすべて伝えること」をいちばん大切にしています。
         </p>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">
+        <p class="mt-4">
           歯医者が苦手な方こそ、ぜひ一度いらしてください。まずは話を聞くだけでも大丈夫です。
         </p>
       </div>
@@ -161,44 +227,50 @@ tailwind.config = {
 </section>
 
 <!-- ▼ 患者様の声 -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">「歯医者がこわくなくなった」患者様の声</h2>
-    <div class="mt-10 grid md:grid-cols-3 gap-6">
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">麻酔が痛くて歯医者を10年避けていました。ここは麻酔の前に塗り薬をしてくれて、気づいたら終わっていた、が本当に起きました。</p>
-        <p class="mt-4 text-xs text-slate-500">30代女性・むし歯治療</p>
+<section class="py-20 md:py-32">
+  <div class="max-w-6xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">VOICE</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900 leading-snug">「歯医者がこわくなくなった」<br class="md:hidden">患者様の声</h2>
+    <div class="mt-12 grid md:grid-cols-3 gap-5">
+      <div class="bg-sand rounded-xl p-7">
+        <div class="flex items-center gap-3">
+          <img src="https://images.pexels.com/photos/1564123/pexels-photo-1564123.jpeg?auto=compress&cs=tinysrgb&w=200" alt="" class="ph w-12 h-12 rounded-full object-cover" width="200" height="200" loading="lazy">
+          <div><p class="text-brand-500 text-sm tracking-widest">★★★★★</p><p class="text-xs mt-0.5">30代女性・むし歯治療</p></div>
+        </div>
+        <p class="mt-5 text-sm border-t border-line pt-5">麻酔が痛くて歯医者を10年避けていました。ここは麻酔の前に塗り薬をしてくれて、気づいたら終わっていた、が本当に起きました。</p>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">初回に「全部で4回、費用はこのくらい」と紙でもらえたのが決め手。仕事帰りの19時台に通えて、予定どおり4回で終わりました。</p>
-        <p class="mt-4 text-xs text-slate-500">40代男性・歯周病治療</p>
+      <div class="bg-sand rounded-xl p-7">
+        <div class="flex items-center gap-3">
+          <img src="https://images.pexels.com/photos/4584496/pexels-photo-4584496.jpeg?auto=compress&cs=tinysrgb&w=200" alt="" class="ph w-12 h-12 rounded-full object-cover" width="200" height="200" loading="lazy">
+          <div><p class="text-brand-500 text-sm tracking-widest">★★★★★</p><p class="text-xs mt-0.5">40代男性・歯周病治療</p></div>
+        </div>
+        <p class="mt-5 text-sm border-t border-line pt-5">初回に「全部で4回、費用はこのくらい」と紙でもらえたのが決め手。仕事帰りの19時台に通えて、予定どおり4回で終わりました。</p>
       </div>
-      <div class="bg-slate-50 rounded-2xl p-6">
-        <p class="text-accent-500 tracking-widest">★★★★★</p>
-        <p class="mt-3 text-sm leading-relaxed">5歳の息子が「また行きたい」と言った歯医者は初めてです。いきなり治療せず、器械に触る練習から始めてくれました。</p>
-        <p class="mt-4 text-xs text-slate-500">30代女性・小児歯科</p>
+      <div class="bg-sand rounded-xl p-7">
+        <div class="flex items-center gap-3">
+          <img src="https://images.pexels.com/photos/1400022/pexels-photo-1400022.jpeg?auto=compress&cs=tinysrgb&w=200" alt="" class="ph w-12 h-12 rounded-full object-cover" width="200" height="200" loading="lazy">
+          <div><p class="text-brand-500 text-sm tracking-widest">★★★★★</p><p class="text-xs mt-0.5">30代女性・小児歯科</p></div>
+        </div>
+        <p class="mt-5 text-sm border-t border-line pt-5">5歳の息子が「また行きたい」と言った歯医者は初めてです。いきなり治療せず、器械に触る練習から始めてくれました。</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ 料金 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">料金の目安</h2>
-    <div class="mt-10 bg-white rounded-2xl shadow-sm overflow-hidden">
-      <table class="w-full text-sm">
-        <tbody class="divide-y divide-slate-100">
-          <tr><td class="px-5 py-4 font-bold">初診（検査・治療計画の提示）</td><td class="px-5 py-4 text-right">保険適用　約2,500〜3,500円</td></tr>
-          <tr><td class="px-5 py-4 font-bold">むし歯治療（1本）</td><td class="px-5 py-4 text-right">保険適用　約1,500〜3,000円／回</td></tr>
-          <tr><td class="px-5 py-4 font-bold">定期検診・クリーニング</td><td class="px-5 py-4 text-right">保険適用　約3,000円</td></tr>
-          <tr><td class="px-5 py-4 font-bold">ホームホワイトニング</td><td class="px-5 py-4 text-right">自費　22,000円（税込）</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <ul class="mt-4 text-xs text-slate-500 space-y-1">
+<section class="py-20 md:py-32 bg-white border-y border-line">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">PRICE</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">料金の目安</h2>
+    <table class="mt-12 w-full text-sm border-t border-line">
+      <tbody class="divide-y divide-line">
+        <tr><td class="py-5 pr-4 font-bold text-ink-900">初診（検査・治療計画の提示）</td><td class="py-5 text-right">保険適用　約2,500〜3,500円</td></tr>
+        <tr><td class="py-5 pr-4 font-bold text-ink-900">むし歯治療（1本）</td><td class="py-5 text-right">保険適用　約1,500〜3,000円／回</td></tr>
+        <tr><td class="py-5 pr-4 font-bold text-ink-900">定期検診・クリーニング</td><td class="py-5 text-right">保険適用　約3,000円</td></tr>
+        <tr><td class="py-5 pr-4 font-bold text-ink-900">ホームホワイトニング</td><td class="py-5 text-right">自費　22,000円（税込）</td></tr>
+      </tbody>
+    </table>
+    <ul class="mt-6 text-xs space-y-1.5 border-b border-line pb-6">
       <li>・保険適用の金額は3割負担の場合の目安です。症状により変動します。</li>
       <li>・初回にお渡しする治療計画に費用の見通しを明記します。計画にない費用を後から請求することはありません。</li>
     </ul>
@@ -206,83 +278,92 @@ tailwind.config = {
 </section>
 
 <!-- ▼ FAQ -->
-<section class="py-14 md:py-20 bg-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">よくある質問</h2>
-    <div class="mt-10 space-y-4">
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">本当に痛くないですか？<span class="text-brand-500 group-open:rotate-45 transition text-xl">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">痛みの感じ方には個人差があるため「無痛」とは言えませんが、表面麻酔・電動注射器・声かけの3つで、痛みと不安をできる限り抑えます。痛みが不安な方は予約時にお伝えください。</p>
+<section class="py-20 md:py-32">
+  <div class="max-w-3xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">FAQ</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">よくある質問</h2>
+    <div class="mt-12 divide-y divide-line border-y border-line">
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">本当に痛くないですか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">痛みの感じ方には個人差があるため「無痛」とは言えませんが、表面麻酔・電動注射器・声かけの3つで、痛みと不安をできる限り抑えます。痛みが不安な方は予約時にお伝えください。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">何回くらい通うことになりますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">初回の検査後に、通院回数と期間の見通しを書面でお渡しします。むし歯1本なら1〜3回が目安です。回数が分からないまま通い続けることはありません。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">何回くらい通うことになりますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">初回の検査後に、通院回数と期間の見通しを書面でお渡しします。むし歯1本なら1〜3回が目安です。回数が分からないまま通い続けることはありません。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">急に痛くなった場合、当日でも診てもらえますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">当日枠を毎日確保しています。まずはお電話ください。埋まっている場合も、応急処置のご案内をします。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">急に痛くなった場合、当日でも診てもらえますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">当日枠を毎日確保しています。まずはお電話ください。埋まっている場合も、応急処置のご案内をします。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">子ども連れでも大丈夫ですか？<span class="text-brand-500 group-open:rotate-45 transition text-xl">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">キッズスペースがあり、スタッフがお子さまを見守れる位置に診療チェアを配置しています。お子さまの治療は、器械に慣れる練習から始めます。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">子ども連れでも大丈夫ですか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">キッズスペースがあり、スタッフがお子さまを見守れる位置に診療チェアを配置しています。お子さまの治療は、器械に慣れる練習から始めます。</p>
       </details>
-      <details class="group bg-slate-50 rounded-xl p-5">
-        <summary class="font-bold cursor-pointer list-none flex justify-between items-center">駐車場はありますか？<span class="text-brand-500 group-open:rotate-45 transition text-xl">＋</span></summary>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">建物裏に2台分ございます。満車の場合は隣接のコインパーキングをご利用ください（駐車券をお渡しします）。</p>
+      <details class="group py-6">
+        <summary class="font-bold text-ink-900 cursor-pointer list-none flex justify-between items-center gap-4">駐車場はありますか？<span class="shrink-0 text-brand-500 group-open:rotate-45 transition text-xl" aria-hidden="true">＋</span></summary>
+        <p class="mt-4 text-sm">建物裏に2台分ございます。満車の場合は隣接のコインパーキングをご利用ください（駐車券をお渡しします）。</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ▼ アクセス・診療時間 -->
-<section class="py-14 md:py-20 bg-brand-50">
-  <div class="max-w-5xl mx-auto px-4">
-    <h2 class="section-title text-2xl md:text-3xl font-black text-center text-brand-900">アクセス・診療時間</h2>
-    <div class="mt-10 grid md:grid-cols-2 gap-6">
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <h3 class="font-bold text-brand-900">あおぞら歯科クリニック</h3>
-        <p class="mt-3 text-sm leading-relaxed text-slate-600">〒100-0000<br>東京都青空市あおぞら町1-2-3 スカイビル2F<br>青空駅 東口より徒歩3分</p>
-        <p class="mt-3 text-sm text-slate-600">TEL: 00-0000-0000</p>
-        <div class="mt-4 h-40 rounded-xl bg-gradient-to-br from-brand-100 to-brand-50 flex items-center justify-center text-brand-400 text-sm">MAP（地図が入ります）</div>
+<section class="py-20 md:py-32 bg-white border-t border-line">
+  <div class="max-w-6xl mx-auto px-5 fade">
+    <p class="text-xs font-bold tracking-[0.3em] text-brand-500">ACCESS</p>
+    <h2 class="mt-4 font-mincho text-3xl md:text-4xl font-bold text-brand-900">アクセス・診療時間</h2>
+    <div class="mt-12 grid md:grid-cols-2 gap-5">
+      <div class="bg-cream border border-line rounded-xl p-8">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">あおぞら歯科クリニック</h3>
+        <p class="mt-4 text-sm border-t border-line pt-4">〒100-0000<br>東京都青空市あおぞら町1-2-3 スカイビル2F<br>青空駅 東口より徒歩3分</p>
+        <p class="mt-3 text-sm">TEL: 00-0000-0000</p>
+        <div class="mt-5 h-40 rounded-lg bg-sand flex items-center justify-center text-sm text-ink-700">MAP（地図が入ります）</div>
       </div>
-      <div class="bg-white rounded-2xl p-6 shadow-sm">
-        <h3 class="font-bold text-brand-900">診療時間</h3>
-        <table class="mt-3 w-full text-sm text-center">
-          <thead><tr class="text-slate-500"><th class="py-2 text-left">時間</th><th>月〜金</th><th>土・日</th></tr></thead>
-          <tbody class="divide-y divide-slate-100">
-            <tr><td class="py-2.5 text-left font-bold">9:30〜13:00</td><td class="text-brand-500 font-bold">●</td><td class="text-brand-500 font-bold">●</td></tr>
-            <tr><td class="py-2.5 text-left font-bold">14:30〜20:00</td><td class="text-brand-500 font-bold">●</td><td class="text-slate-400">〜17:00</td></tr>
+      <div class="bg-cream border border-line rounded-xl p-8">
+        <h3 class="font-mincho font-bold text-lg text-brand-900">診療時間</h3>
+        <table class="mt-4 w-full text-sm text-center border-t border-line">
+          <thead><tr class="text-ink-700"><th class="py-3 text-left font-normal">時間</th><th class="font-normal">月〜金</th><th class="font-normal">土・日</th></tr></thead>
+          <tbody class="divide-y divide-line border-t border-line">
+            <tr><td class="py-3.5 text-left font-bold text-ink-900">9:30〜13:00</td><td class="text-brand-500 font-bold">●</td><td class="text-brand-500 font-bold">●</td></tr>
+            <tr><td class="py-3.5 text-left font-bold text-ink-900">14:30〜20:00</td><td class="text-brand-500 font-bold">●</td><td>〜17:00</td></tr>
           </tbody>
         </table>
-        <p class="mt-3 text-xs text-slate-500">休診日：祝日／最終受付は診療終了30分前</p>
+        <p class="mt-4 text-xs">休診日：祝日／最終受付は診療終了30分前</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ▼ CTA -->
-<section id="reserve" class="py-16 md:py-24 bg-brand-700 text-center text-white">
-  <div class="max-w-3xl mx-auto px-4">
-    <h2 class="text-2xl md:text-4xl font-black leading-tight">その歯の違和感、<br class="md:hidden">今日で「保留」をやめませんか。</h2>
-    <p class="mt-4 text-brand-100 leading-relaxed">むし歯は放置するほど、通院回数も費用も増えていきます。<br>まずは検査と治療計画だけでも受けてみてください。</p>
-    <div class="mt-8 flex flex-col md:flex-row justify-center gap-4">
-      <a href="#" class="bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold px-10 py-4 rounded-full shadow-lg transition">24時間WEB予約をする</a>
-      <a href="tel:0000000000" class="bg-white text-brand-700 text-lg font-bold px-10 py-4 rounded-full shadow-lg transition hover:bg-brand-50">電話で予約する</a>
+<section id="reserve" class="py-20 md:py-32 bg-brand-900 text-white">
+  <div class="max-w-3xl mx-auto px-5 text-center fade">
+    <h2 class="font-mincho text-3xl md:text-4xl font-bold leading-relaxed tracking-wide">その歯の違和感、<br>今日で「保留」をやめませんか。</h2>
+    <p class="mt-6 text-brand-100">むし歯は放置するほど、通院回数も費用も増えていきます。<br class="hidden md:block">まずは検査と治療計画だけでも受けてみてください。</p>
+    <div class="mt-12 flex flex-col md:flex-row justify-center gap-4">
+      <a href="#" class="bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold tracking-wider px-12 py-5 rounded-md transition hover:-translate-y-0.5">24時間WEB予約をする ↗</a>
+      <a href="tel:0000000000" class="border border-white/60 hover:bg-white/10 text-white text-lg font-bold tracking-wider px-12 py-5 rounded-md transition">電話で予約する</a>
     </div>
-    <p class="mt-4 text-sm text-brand-100">予約は30秒で完了／無理な治療のおすすめはしません／当日予約もOK</p>
+    <p class="mt-6 text-sm text-brand-100">予約は30秒で完了／無理な治療のおすすめはしません／当日予約もOK</p>
   </div>
 </section>
 
-<footer class="bg-brand-900 text-brand-100 text-center text-xs py-6 px-4">
-  <p>© あおぞら歯科クリニック</p>
-  <p class="mt-2 opacity-70">※このページはWeb制作ポートフォリオ用に作成した架空のクリニックのサンプルLPです。実在の医療機関とは関係ありません。</p>
+<footer class="bg-brand-900 border-t border-white/10 text-brand-100 text-center text-xs py-8 px-5">
+  <p class="font-mincho">© あおぞら歯科クリニック</p>
+  <p class="mt-3 opacity-70 leading-relaxed">※このページはWeb制作ポートフォリオ用に作成した架空のクリニックのサンプルLPです。実在の医療機関とは関係ありません。写真はPexelsのフリー素材です。</p>
 </footer>
 
 <!-- ▼ モバイル固定CTA -->
-<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-white/95 backdrop-blur border-t border-slate-200 p-3 flex gap-2">
-  <a href="#reserve" class="flex-1 bg-accent-500 text-white font-bold text-center py-3 rounded-full">24時間WEB予約</a>
-  <a href="tel:0000000000" class="flex-1 bg-brand-600 text-white font-bold text-center py-3 rounded-full">電話する</a>
+<div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-cream/95 backdrop-blur border-t border-line p-3 flex gap-2">
+  <a href="#reserve" class="flex-1 bg-accent-500 text-white font-bold text-center py-3.5 rounded-md">24時間WEB予約</a>
+  <a href="tel:0000000000" class="flex-1 bg-brand-700 text-white font-bold text-center py-3.5 rounded-md">電話する</a>
 </div>
+
+<script>
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
 
 </body>
 </html>
